@@ -25,5 +25,17 @@ namespace GruppInlämning_4___BlackJack
         {
             InitializeComponent();
         }
+
+        private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            HighScoreScreen highScoreScreen= new HighScoreScreen();
+            highScoreScreen.Show();
+        }
+
+        private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
+        {
+            BlackJackScreen blackJackScreen= new BlackJackScreen();
+            blackJackScreen.Show();
+        }
     }
 }

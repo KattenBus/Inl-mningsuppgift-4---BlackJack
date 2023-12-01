@@ -23,6 +23,19 @@ namespace GruppInlämning_4___BlackJack
         public BlackJackScreen()
         {
             InitializeComponent();
+
+        }
+        public void UserCards()
+        {
+
+        }
+        public void DealerCards()
+        {
+
+        }
+        private void DealCardButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

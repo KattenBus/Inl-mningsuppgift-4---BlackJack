@@ -24,6 +24,8 @@ namespace GruppInlämning_4___BlackJack
         {
             InitializeComponent();
         }
+        //Startup Screen, där programmet börjar är just nu satt till GameMenu, nu innan Inloggningen fungerar.
+        //För att byta gå till: App.xaml i solution explorer -> Byt StartupUri="GameMenu.xaml"> till StartupUri="LogInScreen.xaml">.
 
     }
 }

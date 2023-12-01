@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button x:Name="GoToHighScoreScreenButton" Content="HighScore" HorizontalAlignment="Left" Margin="74,381,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click"/>
+        <Button x:Name="GoToBlackJackButton" Content="BlackJack" HorizontalAlignment="Left" Margin="647,374,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click"/>
 
     </Grid>
 </Window>
