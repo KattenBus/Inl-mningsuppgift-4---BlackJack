@@ -12,5 +12,6 @@
         <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="181" Margin="216,46,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="164" Margin="44,46,0,0" VerticalAlignment="Top" Width="151" />
         <Button x:Name="DealCardButton" Content="Button" HorizontalAlignment="Left" Margin="173,348,0,0" VerticalAlignment="Top" Click="DealCardButton_Click"/>
+        <Label x:Name="CardTotalUserLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="262,358,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

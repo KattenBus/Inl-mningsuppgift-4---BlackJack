@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Runtime.Intrinsics.X86;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -34,7 +35,11 @@ namespace GruppInlämning_4___BlackJack
 
         private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
         {
-            BlackJackScreen blackJackScreen= new BlackJackScreen();
+            //Startar ny version av kortleken.
+            CardDeck newCardDeck = new CardDeck();
+            CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
+
+            BlackJackScreen blackJackScreen = new BlackJackScreen(newCardDeck, newCardMechanics);
             blackJackScreen.Show();
         }
     }

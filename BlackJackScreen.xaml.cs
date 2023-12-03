@@ -20,21 +20,34 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class BlackJackScreen : Window
     {
-        public BlackJackScreen()
+        public List<Cards> CardList { get; set; }
+        public List<Cards> UserCards { get; set; }
+        public List <Cards> DealerCards { get; set; }
+        public CardMechanics CardMechanics { get; set; }
+        
+        public BlackJackScreen(CardDeck cardDeck, CardMechanics cardMechanics)
         {
             InitializeComponent();
-
+            CardList = cardDeck.CardList;
+            UserCards = cardMechanics.UserCards;
+            DealerCards = cardMechanics.DealerCards;
         }
-        public void UserCards()
+        public void UserCardsds()
         {
 
         }
-        public void DealerCards()
+        public void DealerCardsdsdsa()
         {
 
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
+            Cards dealtCardUser = CardMechanics.DealCardUser(); // Funkar inte.
+
+            //Är menad att hämta bilden för det slumpade kortet. Men funkar inte =
+            FirstCardImageUser.Source = new BitmapImage(new Uri(dealtCardUser.ImagePathFront, UriKind.Relative));
+            //Är menad att visa värdet på det slumpade kortet. Men funkar inte = 
+            CardTotalUserLabel.Content = dealtCardUser.Value.ToString();
 
         }
     }
