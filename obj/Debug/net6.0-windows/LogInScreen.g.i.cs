@@ -53,7 +53,7 @@ namespace GruppInlämning_4___BlackJack {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GruppInlämning 4 - BlackJack;component/loginscreen.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GruppInlämning 4 - BlackJack;V1.0.0.0;component/loginscreen.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\LogInScreen.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
