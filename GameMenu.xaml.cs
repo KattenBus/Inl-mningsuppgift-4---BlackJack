@@ -22,9 +22,11 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class GameMenu : Window
     {
+        public string currentUser;
         public GameMenu()
         {
             InitializeComponent();
+
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,11 @@ namespace GruppInlämning_4___BlackJack
 
             BlackJackScreen blackJackScreen = new BlackJackScreen(newCardDeck, newCardMechanics);
             blackJackScreen.Show();
+        }
+
+        private void logOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
         }
     }
 }

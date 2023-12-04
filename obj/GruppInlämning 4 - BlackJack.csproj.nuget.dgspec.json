@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio Projects\\GruppInlämning 4 - BlackJack\\GruppInlämning 4 - BlackJack.csproj": {}
+    "C:\\Users\\minht\\Desktop\\Uppgift4\\GruppInlämning 4 - BlackJack.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio Projects\\GruppInlämning 4 - BlackJack\\GruppInlämning 4 - BlackJack.csproj": {
+    "C:\\Users\\minht\\Desktop\\Uppgift4\\GruppInlämning 4 - BlackJack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio Projects\\GruppInlämning 4 - BlackJack\\GruppInlämning 4 - BlackJack.csproj",
+        "projectUniqueName": "C:\\Users\\minht\\Desktop\\Uppgift4\\GruppInlämning 4 - BlackJack.csproj",
         "projectName": "GruppInlämning 4 - BlackJack",
-        "projectPath": "D:\\Visual Studio Projects\\GruppInlämning 4 - BlackJack\\GruppInlämning 4 - BlackJack.csproj",
-        "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio Projects\\GruppInlämning 4 - BlackJack\\obj\\",
+        "projectPath": "C:\\Users\\minht\\Desktop\\Uppgift4\\GruppInlämning 4 - BlackJack.csproj",
+        "packagesPath": "C:\\Users\\minht\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\minht\\Desktop\\Uppgift4\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\minht\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
