@@ -9,6 +9,8 @@
     <Grid>
         <Button x:Name="GoToHighScoreScreenButton" Content="HighScore" HorizontalAlignment="Left" Margin="74,381,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click"/>
         <Button x:Name="GoToBlackJackButton" Content="BlackJack" HorizontalAlignment="Left" Margin="647,374,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click"/>
+        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="733,16,0,0" VerticalAlignment="Top" Click="logOutButton_Click"/>
+        <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

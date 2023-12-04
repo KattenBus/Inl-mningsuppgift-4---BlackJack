@@ -24,3 +24,29 @@ D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows
 D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.g.cs
 D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\BlackJackScreen.baml
 D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.baml
+C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.exe
+C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.deps.json
+C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.runtimeconfig.json
+C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.dll
+C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\BlackJackScreen.g.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GameMenu.g.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\HighScoreScreen.g.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\LogInScreen.g.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.cache
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.lref
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\BlackJackScreen.baml
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GameMenu.baml
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\HighScoreScreen.baml
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\LogInScreen.baml
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.g.resources
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfoInputs.cache
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfo.cs
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.csproj.CoreCompileInputs.cache
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.dll
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\refint\GruppInlämning 4 - BlackJack.dll
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.genruntimeconfig.cache
+C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\ref\GruppInlämning 4 - BlackJack.dll
