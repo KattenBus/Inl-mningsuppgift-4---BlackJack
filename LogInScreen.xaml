@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="LogInScreen" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="usernameInput" HorizontalAlignment="Center" Margin="0,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Click="loginButton_Click"/>
-        <Label Content="Please enter your details to login" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="251,182,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="251,245,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="283,156,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="usernameInput" HorizontalAlignment="Center" Margin="0,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Center" Margin="0,261,0,0" VerticalAlignment="Top" Click="loginButton_Click" Width="64"/>
+        <Label Content="Please enter your details to login" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="251,141,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="251,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="283,115,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" Width="64" Click="registerButton_Click"/>
     </Grid>
 </Window>

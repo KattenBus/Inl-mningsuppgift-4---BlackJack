@@ -1,0 +1,23 @@
+﻿<Window x:Class="GruppInlämning_4___BlackJack.RegistrationScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
+        mc:Ignorable="d"
+        Title="RegistrationScreen" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="newUsernameInput" HorizontalAlignment="Center" Margin="0,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="newPasswordInput" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="confirmNewPasswordInput" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="failedRegistrationLabel" Content="" HorizontalAlignment="Left" Margin="296,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="216,231,0,0" VerticalAlignment="Top"/>
+        <Label Content="New password" HorizontalAlignment="Left" Margin="234,181,0,0" VerticalAlignment="Top"/>
+        <Label Content="New username" HorizontalAlignment="Left" Margin="232,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="REGISTER NOW TO PLAY BLACKJACK!" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="agreeTermsAndConditon" Content="You agree to our terms and conditions" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="regButton" Content="Register" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,0.541" Click="regButton_Click"/>
+        <Button x:Name="returnToLogIn" Content="Login" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top" Width="46" Click="returnToLogIn_Click"/>
+
+    </Grid>
+</Window>
