@@ -1,29 +1,5 @@
 D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.exe
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.deps.json
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.runtimeconfig.json
 D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.dll
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GameMenu.g.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\App.g.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.cache
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.lref
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GameMenu.baml
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.g.resources
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.GeneratedMSBuildEditorConfig.editorconfig
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfoInputs.cache
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfo.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.csproj.CoreCompileInputs.cache
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.dll
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\refint\GruppInlämning 4 - BlackJack.dll
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.genruntimeconfig.cache
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\ref\GruppInlämning 4 - BlackJack.dll
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\HighScoreScreen.g.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\HighScoreScreen.baml
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\BlackJackScreen.g.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.g.cs
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\BlackJackScreen.baml
-D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.baml
 C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.exe
 C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.deps.json
 C:\Users\minht\Desktop\Uppgift4\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.runtimeconfig.json
@@ -50,3 +26,83 @@ C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\refint\GruppInlämning 
 C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
 C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.genruntimeconfig.cache
 C:\Users\minht\Desktop\Uppgift4\obj\Debug\net6.0-windows\ref\GruppInlämning 4 - BlackJack.dll
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\BlackJackScreen.g.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GameMenu.g.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\HighScoreScreen.g.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.g.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\App.g.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.cache
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_MarkupCompile.lref
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\BlackJackScreen.baml
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GameMenu.baml
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\HighScoreScreen.baml
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\LogInScreen.baml
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.g.resources
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfoInputs.cache
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.AssemblyInfo.cs
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.dll
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\refint\GruppInlämning 4 - BlackJack.dll
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.deps.json
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.runtimeconfig.json
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.pdb
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack.genruntimeconfig.cache
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\ref\GruppInlämning 4 - BlackJack.dll
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\10-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\10-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\10-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\10-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\2-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\2-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\2-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\2-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\3-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\3-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\3-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\3-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\4-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\4-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\4-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\4-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\5-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\5-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\5-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\5-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\6-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\6-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\6-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\6-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\7-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\7-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\7-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\7-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\8-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\8-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\8-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\8-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\9-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\9-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\9-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\9-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\A-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\A-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\A-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\A-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\BACK.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-B.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-R.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\J-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\K-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\K-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\K-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\K-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\Q-C.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\Q-D.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\Q-H.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\bin\Debug\net6.0-windows\Cards\Q-S.png
+D:\Visual Studio Projects\GruppInlämning 4 - BlackJack\obj\Debug\net6.0-windows\GruppInlämning 4 - BlackJack_Content.g.cs

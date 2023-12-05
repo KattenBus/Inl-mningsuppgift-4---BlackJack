@@ -20,6 +20,9 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class BlackJackScreen : Window
     {
+        CardMechanics cardMechanics;
+        CardDeck cardDeck;
+
         public List<Cards> CardList { get; set; }
         public List<Cards> UserCards { get; set; }
         public List <Cards> DealerCards { get; set; }
@@ -32,6 +35,12 @@ namespace GruppInlämning_4___BlackJack
             UserCards = cardMechanics.UserCards;
             DealerCards = cardMechanics.DealerCards;
         }
+
+        public void SetCardMechanic(CardMechanics cardmechanics)
+        {
+            this.cardMechanics = cardmechanics;
+        }
+
         public void UserCardsds()
         {
 
@@ -42,12 +51,16 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
-            Cards dealtCardUser = CardMechanics.DealCardUser(); // Funkar inte.
+            Cards card =  cardMechanics.DealCardUser();
 
-            //Är menad att hämta bilden för det slumpade kortet. Men funkar inte =
-            FirstCardImageUser.Source = new BitmapImage(new Uri(dealtCardUser.ImagePathFront, UriKind.Relative));
-            //Är menad att visa värdet på det slumpade kortet. Men funkar inte = 
-            CardTotalUserLabel.Content = dealtCardUser.Value.ToString();
+            //Är menad att hämta bilden för det slumpade kortet.      
+            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
+            // Är menad att visa värdet på det slumpade kortet.
+            CardTotalUserLabel.Content = card.Value.ToString();
+            CardTotalUserLabel.Content = card.ID.ToString();
+            CardIDUserLabel.Content = card.ID.ToString();
+
+
 
         }
     }
