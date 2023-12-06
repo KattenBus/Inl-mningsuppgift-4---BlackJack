@@ -41,7 +41,7 @@ namespace GruppInlämning_4___BlackJack
             CardDeck newCardDeck = new CardDeck();
             CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
 
-            BlackJackScreen blackJackScreen = new BlackJackScreen(newCardDeck, newCardMechanics);
+            BlackJackScreen blackJackScreen = new BlackJackScreen(newCardMechanics);
             blackJackScreen.SetCardMechanic(newCardMechanics);
             blackJackScreen.Show();
         }

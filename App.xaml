@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
              StartupUri="LogInScreen.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

@@ -20,20 +20,12 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class BlackJackScreen : Window
     {
-        CardMechanics cardMechanics;
-        CardDeck cardDeck;
-
-        public List<Cards> CardList { get; set; }
-        public List<Cards> UserCards { get; set; }
-        public List <Cards> DealerCards { get; set; }
-        public CardMechanics CardMechanics { get; set; }
-        
-        public BlackJackScreen(CardDeck cardDeck, CardMechanics cardMechanics)
+        CardMechanics cardMechanics;     
+        public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
-            CardList = cardDeck.CardList;
-            UserCards = cardMechanics.UserCards;
-            DealerCards = cardMechanics.DealerCards;
+            SetCardMechanic(cardMechanics);
+
         }
 
         public void SetCardMechanic(CardMechanics cardmechanics)
@@ -41,27 +33,26 @@ namespace GruppInlämning_4___BlackJack
             this.cardMechanics = cardmechanics;
         }
 
-        public void UserCardsds()
+        public void UserHand()
         {
+            Cards card = cardMechanics.DealCardUser();
 
+            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
+            CardIDUserLabel.Content = card.Value.ToString();
+            CardIDUserLabel.Content = card.ID.ToString();
         }
-        public void DealerCardsdsdsa()
+        public void DealerHand()
         {
+            Cards card = cardMechanics.DealCardDealer();
 
+            FirstCardImageDealer.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
+            CardIDDealerLabel.Content = card.Value.ToString();
+            CardIDDealerLabel.Content = card.ID.ToString();
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
-            Cards card =  cardMechanics.DealCardUser();
-
-            //Är menad att hämta bilden för det slumpade kortet.      
-            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
-            // Är menad att visa värdet på det slumpade kortet.
-            CardTotalUserLabel.Content = card.Value.ToString();
-            CardTotalUserLabel.Content = card.ID.ToString();
-            CardIDUserLabel.Content = card.ID.ToString();
-
-
-
+            UserHand();
+            DealerHand();   
         }
     }
 }
