@@ -20,39 +20,80 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class BlackJackScreen : Window
     {
-        CardMechanics cardMechanics;     
+        CardMechanics cardMechanics;
+
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
             SetCardMechanic(cardMechanics);
-
         }
-
         public void SetCardMechanic(CardMechanics cardmechanics)
         {
             this.cardMechanics = cardmechanics;
         }
-
         public void UserHand()
         {
             Cards card = cardMechanics.DealCardUser();
 
-            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
-            CardIDUserLabel.Content = card.Value.ToString();
-            CardIDUserLabel.Content = card.ID.ToString();
+            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));  
+            CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
         }
         public void DealerHand()
         {
             Cards card = cardMechanics.DealCardDealer();
 
             FirstCardImageDealer.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
-            CardIDDealerLabel.Content = card.Value.ToString();
-            CardIDDealerLabel.Content = card.ID.ToString();
+            CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
             UserHand();
-            DealerHand();   
+            DealerHand();
+            cardMechanics.CheckBlackJack();
+            DealCardButton.IsEnabled = false;
+            HitButton.IsEnabled = true;
+            StandButton.IsEnabled = true;
+        }
+
+        private void HitButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserHand();
+            cardMechanics.CheckBust();
+            UpdatePlayAgainButtonVisibility();
+        }
+        private void StandButton_Click(object sender, RoutedEventArgs e)
+        {
+            cardMechanics.Stand();
+            CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
+            UpdatePlayAgainButtonVisibility();
+
+        }
+
+        private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
+        {
+            cardMechanics.NewRound();
+
+            FirstCardImageUser.Source = null;
+            FirstCardImageDealer.Source = null;
+            CardTotalUserLabel.Content = "0";
+            CardTotalDealerLabel.Content = "0";
+
+            DealCardButton.IsEnabled = true;
+            HitButton.IsEnabled = false;
+            StandButton.IsEnabled = false;
+
+            PlayAgainButton.Visibility = Visibility.Hidden;
+        }
+        private void UpdatePlayAgainButtonVisibility()
+        {
+            if (cardMechanics.isGameFinished == true)
+            {
+                PlayAgainButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PlayAgainButton.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

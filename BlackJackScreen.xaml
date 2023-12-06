@@ -10,12 +10,17 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Image x:Name="FirstCardImageUser" HorizontalAlignment="Left" Height="174" Margin="569,234,0,0" VerticalAlignment="Top" Width="118"/>
-        <Image x:Name="SecondCardImageUser" HorizontalAlignment="Left" Height="174" Margin="400,234,0,0" VerticalAlignment="Top" Width="130"/>
-        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="181" Margin="216,46,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="164" Margin="44,46,0,0" VerticalAlignment="Top" Width="151" />
-        <Button x:Name="DealCardButton" Content="Button" HorizontalAlignment="Left" Margin="173,348,0,0" VerticalAlignment="Top" Click="DealCardButton_Click"/>
-        <Label x:Name="CardIDDealerLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="238,221,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="CardIDUserLabel" Content="CardIDUserLabel" HorizontalAlignment="Left" Margin="459,386,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="FirstCardImageUser" HorizontalAlignment="Left" Height="90" Margin="713,336,0,0" VerticalAlignment="Top" Width="59"/>
+        <Image x:Name="SecondCardImageUser" HorizontalAlignment="Left" Height="90" Margin="646,336,0,0" VerticalAlignment="Top" Width="63"/>
+        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="168" Margin="173,27,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="164" Margin="32,27,0,0" VerticalAlignment="Top" Width="117" />
+        <Button x:Name="DealCardButton" Content="Deal" HorizontalAlignment="Left" Margin="23,336,0,0" VerticalAlignment="Top" Click="DealCardButton_Click" Height="72" Width="127"/>
+        <Label x:Name="CardTotalDealerLabel" Content="CardTotalDealer" HorizontalAlignment="Left" Margin="23,180,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="CardTotalUserLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="521,164,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Image x:Name="ThirdCardImageUser" HorizontalAlignment="Left" Height="80" Margin="557,345,0,0" VerticalAlignment="Top" Width="69"/>
+        <Image x:Name="FourthCardImageUser" HorizontalAlignment="Left" Height="85" Margin="475,345,0,0" VerticalAlignment="Top" Width="54"/>
+        <Button x:Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="258,362,0,0" VerticalAlignment="Top" Height="45" Width="87" Click="HitButton_Click" IsEnabled="False"/>
+        <Button x:Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="155,362,0,0" VerticalAlignment="Top" Height="46" Width="98" Click="StandButton_Click" IsEnabled="False"/>
+        <Button x:Name="PlayAgainButton" Content="PLAY AGAIN!" HorizontalAlignment="Center" Margin="0,164,0,0" VerticalAlignment="Top" Height="89" Width="168" Click="PlayAgainButton_Click" Visibility="Hidden"/>
     </Grid>
 </Window>

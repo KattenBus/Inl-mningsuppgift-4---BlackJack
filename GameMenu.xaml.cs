@@ -22,11 +22,11 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class GameMenu : Window
     {
+        //Råkade göra något här. Tror det såg ut såhär innan? Det verkar funka iaf.
         public string currentUser;
         public GameMenu()
         {
             InitializeComponent();
-
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
@@ -34,7 +34,6 @@ namespace GruppInlämning_4___BlackJack
             HighScoreScreen highScoreScreen= new HighScoreScreen();
             highScoreScreen.Show();
         }
-
         private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
         {
             //Startar ny version av kortleken.
