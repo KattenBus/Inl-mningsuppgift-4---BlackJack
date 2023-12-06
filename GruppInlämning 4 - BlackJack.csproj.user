@@ -16,6 +16,9 @@
     <Compile Update="LogInScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RegistrationScreen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="BlackJackScreen.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LogInScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegistrationScreen.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
