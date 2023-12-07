@@ -11,10 +11,10 @@ namespace GruppInlämning_4___BlackJack
     public class Cards
     {
         //De properties korten har. Varje kort har ett ID för igenkänning, Value för kortets värde i spelet och en Imagepath som länkar till en bild.
-        public string ID { get; }
-        public int Value { get; }
-        public string ImagePathFront { get; }
-        public string ImagePathBack { get; }
+        public string ID { get; set; }
+        public int Value { get; set; }
+        public string ImagePathFront { get; set; }
+        public string ImagePathBack { get; set; }
 
         public Cards(string iD, int value, string imagePathFront, string imagePathBack)
         {

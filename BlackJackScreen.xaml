@@ -12,8 +12,8 @@
         </Grid.Background>
         <Image x:Name="FirstCardImageUser" HorizontalAlignment="Left" Height="90" Margin="713,336,0,0" VerticalAlignment="Top" Width="59"/>
         <Image x:Name="SecondCardImageUser" HorizontalAlignment="Left" Height="90" Margin="646,336,0,0" VerticalAlignment="Top" Width="63"/>
-        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="168" Margin="173,27,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="164" Margin="32,27,0,0" VerticalAlignment="Top" Width="117" />
+        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="112" Margin="408,10,0,0" VerticalAlignment="Top" Width="71"/>
+        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="110" Margin="316,10,0,0" VerticalAlignment="Top" Width="79" />
         <Button x:Name="DealCardButton" Content="Deal" HorizontalAlignment="Left" Margin="23,336,0,0" VerticalAlignment="Top" Click="DealCardButton_Click" Height="72" Width="127"/>
         <Label x:Name="CardTotalDealerLabel" Content="CardTotalDealer" HorizontalAlignment="Left" Margin="23,180,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label x:Name="CardTotalUserLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="521,164,0,0" VerticalAlignment="Top" FontSize="20"/>
@@ -22,5 +22,9 @@
         <Button x:Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="258,362,0,0" VerticalAlignment="Top" Height="45" Width="87" Click="HitButton_Click" IsEnabled="False"/>
         <Button x:Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="155,362,0,0" VerticalAlignment="Top" Height="46" Width="98" Click="StandButton_Click" IsEnabled="False"/>
         <Button x:Name="PlayAgainButton" Content="PLAY AGAIN!" HorizontalAlignment="Center" Margin="0,164,0,0" VerticalAlignment="Top" Height="89" Width="168" Click="PlayAgainButton_Click" Visibility="Hidden"/>
+        <Image x:Name="FifthCardImageUser" HorizontalAlignment="Left" Height="100" Margin="379,325,0,0" VerticalAlignment="Top" Width="66"/>
+        <Image x:Name="ThirdCardImageDealer" HorizontalAlignment="Left" Height="108" Margin="244,10,0,0" VerticalAlignment="Top" Width="60"/>
+        <Image x:Name="FourthCardImageDealer" HorizontalAlignment="Left" Height="109" Margin="173,10,0,0" VerticalAlignment="Top" Width="69"/>
+        <Image x:Name="FifthCardImageDealer" HorizontalAlignment="Left" Height="92" Margin="98,23,0,0" VerticalAlignment="Top" Width="62"/>
     </Grid>
 </Window>

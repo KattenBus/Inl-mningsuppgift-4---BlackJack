@@ -21,7 +21,6 @@ namespace GruppInlämning_4___BlackJack
         public CardMechanics(CardDeck cardDeck)
         {
             CardList = cardDeck.CardList;
-
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
         public Cards DealCardUser()
@@ -116,13 +115,30 @@ namespace GruppInlämning_4___BlackJack
                 MessageBox.Show("Hurray! You got BlackJack");
             }
         }
+        public void CheckBlackJackDealer()
+        {
+            if (CalculateHandValueDealer() == 21 && DealerCards.Count == 2)
+            {
+                RoundEnd();
+                MessageBox.Show("The dealer got BackJack. YOU LOOSE!");
+            }
+        }
         //Kollar om User har kort på handen som överstiger ett värde av 21.
         public bool CheckBust()
         {
             if (CalculateHandValueUser() >= 22)
             {
                 RoundEnd();
-                MessageBox.Show("You got more than 21, Bust!");
+                MessageBox.Show("You got more than 21, Bust! YOU LOOSE");
+            }
+            return true;
+        }
+        public bool CheckBustDealer()
+        {
+            if (CalculateHandValueUser() >= 22)
+            {
+                RoundEnd();
+                MessageBox.Show("The dealer busted! YOU WIN!");
             }
             return true;
         }
@@ -130,8 +146,8 @@ namespace GruppInlämning_4___BlackJack
         public void DealersTurn()
         {
             while (CalculateHandValueDealer() <= 16)
-            {
-                DealCardDealer();
+            {        
+                    DealCardDealer();
             }
             if (CalculateHandValueDealer() >= 22)
             {
@@ -143,7 +159,7 @@ namespace GruppInlämning_4___BlackJack
             }
             else if (CalculateHandValueDealer() < CalculateHandValueUser())
             {
-                MessageBox.Show("You Managed to Win!");
+                MessageBox.Show("You Managed to WIN!");
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {

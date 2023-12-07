@@ -25,7 +25,7 @@ namespace GruppInlämning_4___BlackJack
             CardList.Add(new Cards("Hearts 7", 7, "Cards/7-H.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Hearts 8", 8, "Cards/8-H.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Hearts 9", 9, "Cards/9-H.png", "Cards/BACK.png"));
-            CardList.Add(new Cards("Hearts 10", 10, "Cards/10-H.png)", "Cards/BACK.png"));
+            CardList.Add(new Cards("Hearts 10", 10, "Cards/10-H.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Hearts Jack", 10, "Cards/J-H.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Hearts Queen", 10, "Cards/Q-H.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Hearts King", 10, "Cards/K-H.png", "Cards/BACK.png"));
@@ -39,7 +39,7 @@ namespace GruppInlämning_4___BlackJack
             CardList.Add(new Cards("Diamonds 7", 7, "Cards/7-D.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Diamonds 8", 8, "Cards/8-D.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Diamonds 9", 9, "Cards/9-D.png", "Cards/BACK.png"));
-            CardList.Add(new Cards("Diamonds 10", 10, "Cars/10-D.png", "Cards/BACK.png"));
+            CardList.Add(new Cards("Diamonds 10", 10, "Cards/10-D.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Diamonds Jack", 10, "Cards/J-D.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Diamonds Queen", 10, "Cards/Q-D.png", "Cards/BACK.png"));
             CardList.Add(new Cards("Diamonds King", 10, "Cards/K-D.png", "Cards/BACK.png"));
