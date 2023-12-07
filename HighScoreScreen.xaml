@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="HighScoreScreen" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Highscore.png"/>
+        </Grid.Background>
+
     </Grid>
 </Window>

@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="GoToHighScoreScreenButton" Content="HighScore" HorizontalAlignment="Left" Margin="74,381,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click"/>
-        <Button x:Name="GoToBlackJackButton" Content="BlackJack" HorizontalAlignment="Left" Margin="647,374,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click"/>
-        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="733,16,0,0" VerticalAlignment="Top" Click="logOutButton_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/GameMenu.png"/>
+        </Grid.Background>
+        <Button x:Name="GoToHighScoreScreenButton" Content="HighScore" HorizontalAlignment="Left" Margin="381,320,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="31" Width="89"/>
+        <Button x:Name="GoToBlackJackButton" Content="BlackJack" HorizontalAlignment="Left" Margin="383,265,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click" FontFamily="Franklin Gothic Heavy" Height="35" Width="87" FontSize="14"/>
+        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="381,371,0,0" VerticalAlignment="Top" Click="logOutButton_Click" FontFamily="Franklin Gothic Heavy" Height="30" Width="89" FontSize="14"/>
         <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>

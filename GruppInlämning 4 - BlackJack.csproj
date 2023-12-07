@@ -66,6 +66,9 @@
     <None Remove="Cards\Q-D.png" />
     <None Remove="Cards\Q-H.png" />
     <None Remove="Cards\Q-S.png" />
+    <None Remove="GameMenu.png" />
+    <None Remove="Highscore.png" />
+    <None Remove="Login.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -239,6 +242,9 @@
   <ItemGroup>
     <Resource Include="2-H.png" />
     <Resource Include="6-C.png" />
+    <Resource Include="GameMenu.png" />
+    <Resource Include="Highscore.png" />
+    <Resource Include="Login.png" />
   </ItemGroup>
 
 </Project>
