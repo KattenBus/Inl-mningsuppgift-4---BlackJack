@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="2-H.png" />
     <None Remove="6-C.png" />
+    <None Remove="BlackJackTable.jpg" />
     <None Remove="Cards\10-C.png" />
     <None Remove="Cards\10-D.png" />
     <None Remove="Cards\10-H.png" />
@@ -242,6 +243,7 @@
   <ItemGroup>
     <Resource Include="2-H.png" />
     <Resource Include="6-C.png" />
+    <Resource Include="BlackJackTable.jpg" />
     <Resource Include="GameMenu.png" />
     <Resource Include="Highscore.png" />
     <Resource Include="Login.png" />
