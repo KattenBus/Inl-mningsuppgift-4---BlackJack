@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="RegistrationScreen" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF20196B" Offset="1"/>
+                <GradientStop Color="#FFC6C5D6" Offset="0.009"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <TextBox x:Name="newUsernameInput" HorizontalAlignment="Center" Margin="0,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="newPasswordInput" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="confirmNewPasswordInput" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120"/>
@@ -14,10 +20,10 @@
         <Label Content="Confirm password" HorizontalAlignment="Left" Margin="216,231,0,0" VerticalAlignment="Top"/>
         <Label Content="New password" HorizontalAlignment="Left" Margin="234,181,0,0" VerticalAlignment="Top"/>
         <Label Content="New username" HorizontalAlignment="Left" Margin="232,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="REGISTER NOW TO PLAY BLACKJACK!" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="agreeTermsAndConditon" Content="You agree to our terms and conditions" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="regButton" Content="Register" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,0.541" Click="regButton_Click"/>
-        <Button x:Name="returnToLogIn" Content="Login" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top" Width="46" Click="returnToLogIn_Click"/>
+        <Label Content="REGISTER NOW TO PLAY BLACKJACK!" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <CheckBox x:Name="agreeTermsAndConditon" Content="You agree to our terms and conditions" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Button x:Name="regButton" Content="Register" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,0.541" Click="regButton_Click" Width="77"/>
+        <Button x:Name="returnToLogIn" Content="Login" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top" Width="77" Click="returnToLogIn_Click"/>
 
     </Grid>
 </Window>
