@@ -158,14 +158,13 @@ namespace GruppInlämning_4___BlackJack
         //Kod som ska hoppa igång när programmet startar eller man startar en ny runda.
         public void NewRound()
         {
-            UserCards.Clear();
-            DealerCards.Clear();
-
             ResetCardDeck();
         }
 
         private void ResetCardDeck()
         {
+            UserCards.Clear();
+            DealerCards.Clear();
             CardList = new CardDeck().CardList;
         }
     }

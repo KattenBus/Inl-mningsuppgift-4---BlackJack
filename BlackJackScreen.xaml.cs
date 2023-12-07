@@ -21,11 +21,13 @@ namespace GruppInlämning_4___BlackJack
     public partial class BlackJackScreen : Window
     {
         CardMechanics cardMechanics;
+        
 
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
             SetCardMechanic(cardMechanics);
+            
         }
         public void SetCardMechanic(CardMechanics cardmechanics)
         {
@@ -50,6 +52,7 @@ namespace GruppInlämning_4___BlackJack
             UserHand();
             DealerHand();
             cardMechanics.CheckBlackJack();
+            UpdatePlayAgainButtonVisibility();
             DealCardButton.IsEnabled = false;
             HitButton.IsEnabled = true;
             StandButton.IsEnabled = true;
