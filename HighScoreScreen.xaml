@@ -10,6 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Highscore.png"/>
         </Grid.Background>
+        <ListBox x:Name="HighScoreListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="285,156,285,50" Background="Black" Foreground="White"/>
 
     </Grid>
 </Window>

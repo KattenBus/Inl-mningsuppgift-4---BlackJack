@@ -22,10 +22,14 @@ namespace GruppInlämning_4___BlackJack
     {
         CardMechanics cardMechanics;
 
+        //public Cards card;
+
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
             SetCardMechanic(cardMechanics);
+            Cards card;
+            HighScoreScreen highScoreScreen;
         }
         public void SetCardMechanic(CardMechanics cardmechanics)
         {
@@ -35,9 +39,13 @@ namespace GruppInlämning_4___BlackJack
         {
             Cards card = cardMechanics.DealCardUser();
 
-            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));  
+            FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
+            Cards card2 = cardMechanics.DealCardUser();
+            SecondCardImageUser.Source = new BitmapImage(new Uri(card2.ImagePathFront, UriKind.Relative));
             CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
         }
+
+        
         public void DealerHand()
         {
             Cards card = cardMechanics.DealCardDealer();
@@ -57,11 +65,27 @@ namespace GruppInlämning_4___BlackJack
 
         private void HitButton_Click(object sender, RoutedEventArgs e)
         {
-            UserHand();
+            
+            cardMechanics.Hit();
             cardMechanics.CheckBust();
             UpdatePlayAgainButtonVisibility();
+            if (cardMechanics.CheckBust() == false) 
+            {
+                Cards card3 = cardMechanics.DealCardUser();
+                ThirdCardImageUser.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
+                //if (ThirdCardImageUser.Source != null)
+                //{
+                //    Cards card4 = cardMechanics.DealCardUser();
+                //    FourthCardImageUser.Source = new BitmapImage(new Uri(card4.ImagePathFront, UriKind.Relative));
+                //}
+            }
+            
+
+            
+
+
         }
-        private void StandButton_Click(object sender, RoutedEventArgs e)
+            private void StandButton_Click(object sender, RoutedEventArgs e)
         {
             cardMechanics.Stand();
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
@@ -75,6 +99,11 @@ namespace GruppInlämning_4___BlackJack
 
             FirstCardImageUser.Source = null;
             FirstCardImageDealer.Source = null;
+            SecondCardImageUser.Source = null;
+            ThirdCardImageUser.Source = null;
+            FourthCardImageUser.Source = null;
+
+
             CardTotalUserLabel.Content = "0";
             CardTotalDealerLabel.Content = "0";
 

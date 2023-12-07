@@ -26,32 +26,32 @@ namespace GruppInlämning_4___BlackJack
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
         public Cards DealCardUser()
         {
-            if (UserCards.Count == 0)
-            {
+            //if (UserCards.Count == 0)
+            //{
+            //    int chooseRandomCard = randomCard.Next(0, CardList.Count);
+            //    Cards dealtCardUser = CardList[chooseRandomCard];
+
+            //    CardList.RemoveAt(chooseRandomCard);
+            //    UserCards.Add(dealtCardUser);
+
+            //    chooseRandomCard = randomCard.Next(0, CardList.Count);
+            //    dealtCardUser = CardList[chooseRandomCard];
+
+            //    CardList.RemoveAt(chooseRandomCard);
+            //    UserCards.Add(dealtCardUser);
+
+            //    return dealtCardUser;
+            //}
+            //else 
+            //{
                 int chooseRandomCard = randomCard.Next(0, CardList.Count);
                 Cards dealtCardUser = CardList[chooseRandomCard];
 
                 CardList.RemoveAt(chooseRandomCard);
                 UserCards.Add(dealtCardUser);
 
-                chooseRandomCard = randomCard.Next(0, CardList.Count);
-                dealtCardUser = CardList[chooseRandomCard];
-
-                CardList.RemoveAt(chooseRandomCard);
-                UserCards.Add(dealtCardUser);
-
                 return dealtCardUser;
-            }
-            else 
-            {
-                int chooseRandomCard = randomCard.Next(0, CardList.Count);
-                Cards dealtCardUser = CardList[chooseRandomCard];
-
-                CardList.RemoveAt(chooseRandomCard);
-                UserCards.Add(dealtCardUser);
-
-                return dealtCardUser;
-            }
+            //}
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till DealerCards listan.
         public Cards DealCardDealer()
@@ -89,13 +89,13 @@ namespace GruppInlämning_4___BlackJack
         //Ta ett till kort.
         public Cards Hit()
         { 
-                int chooseRandomCard = randomCard.Next(0, CardList.Count);
-                Cards drawnCard = CardList[chooseRandomCard];
+             int chooseRandomCard = randomCard.Next(0, CardList.Count);
+             Cards drawnCard = CardList[chooseRandomCard];
 
-                CardList.RemoveAt(chooseRandomCard);
-                UserCards.Add(drawnCard);
+             CardList.RemoveAt(chooseRandomCard);
+             UserCards.Add(drawnCard);
 
-                return drawnCard;      
+             return drawnCard;      
         }
         //Man är nöjd med sina kort och lämnar över spelet till dealern
         public void Stand()
@@ -117,13 +117,14 @@ namespace GruppInlämning_4___BlackJack
             }
         }
         //Kollar om User har kort på handen som överstiger ett värde av 21.
-        public void CheckBust()
+        public bool CheckBust()
         {
             if (CalculateHandValueUser() >= 22)
             {
                 RoundEnd();
                 MessageBox.Show("You got more than 21, Bust!");
             }
+            return true;
         }
         //Kod som ska hoppa igång efter User är klar med sin runda.
         public void DealersTurn()
