@@ -118,6 +118,7 @@ namespace GruppInlämning_4___BlackJack
             {
                 RoundEnd();
                 MessageBox.Show("Hurray! You got BlackJack");
+                PointsEarned();
             }
         }
         public void CheckBlackJackDealer()
@@ -172,7 +173,28 @@ namespace GruppInlämning_4___BlackJack
                 MessageBox.Show("The dealer won by a smidge!");
             }
             RoundEnd();
+            PointsEarned();
         }
+        public int PointsEarned()
+        {
+            int currentScore = 0;
+            if (CalculateHandValueUser() == 21)
+            {
+                currentScore++;
+                currentScore++;
+            }
+            else if (CalculateHandValueDealer() >= 22)
+            {
+                currentScore++;
+            }
+            else if (CalculateHandValueUser() > CalculateHandValueDealer())
+            {
+                currentScore++;
+            }
+            return currentScore;
+        }
+
+
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
         {
