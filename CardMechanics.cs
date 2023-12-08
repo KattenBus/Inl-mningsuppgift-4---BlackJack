@@ -18,10 +18,12 @@ namespace GruppInlämning_4___BlackJack
         Random randomCard = new Random();
         public bool isGameFinished = false;
 
+
         public CardMechanics(CardDeck cardDeck)
         {
             CardList = cardDeck.CardList;
         }
+
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
         public Cards DealCardUser()
         {
@@ -104,7 +106,10 @@ namespace GruppInlämning_4___BlackJack
         //Splitta korten och spela på två händer samtidigt.
         public void Split()
         {
-            //Inte riktigt säker på hur jag ska lösa den.
+            //if (UserCards.Count == 2 && UserCards[0].Value == UserCards[1].Value)
+            //{ 
+            
+            //}
         }
         //Kollar om User har fått Blackjack(Två kort som tillsammans blir 21)
         public void CheckBlackJack()
@@ -133,7 +138,7 @@ namespace GruppInlämning_4___BlackJack
             }
             return true;
         }
-        public bool CheckBustDealer()
+        /*public bool CheckBustDealer()
         {
             if (CalculateHandValueUser() >= 22)
             {
@@ -141,13 +146,14 @@ namespace GruppInlämning_4___BlackJack
                 MessageBox.Show("The dealer busted! YOU WIN!");
             }
             return true;
-        }
+        }*/
+
         //Kod som ska hoppa igång efter User är klar med sin runda.
         public void DealersTurn()
         {
             while (CalculateHandValueDealer() <= 16)
             {        
-                    DealCardDealer();
+                    //DealCardDealer();
             }
             if (CalculateHandValueDealer() >= 22)
             {

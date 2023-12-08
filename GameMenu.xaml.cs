@@ -39,8 +39,8 @@ namespace GruppInlämning_4___BlackJack
             //Startar ny version av kortleken.
             CardDeck newCardDeck = new CardDeck();
             CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
-
             BlackJackScreen blackJackScreen = new BlackJackScreen(newCardMechanics);
+
             blackJackScreen.SetCardMechanic(newCardMechanics);
             blackJackScreen.Show();
         }
