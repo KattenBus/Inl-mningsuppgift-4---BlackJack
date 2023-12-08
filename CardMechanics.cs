@@ -18,12 +18,13 @@ namespace GruppInlämning_4___BlackJack
         Random randomCard = new Random();
         public bool isGameFinished = false;
 
+        //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
+        public int totalScore = 0;
 
         public CardMechanics(CardDeck cardDeck)
         {
             CardList = cardDeck.CardList;
         }
-
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
         public Cards DealCardUser()
         {
@@ -116,28 +117,29 @@ namespace GruppInlämning_4___BlackJack
         {
             if (CalculateHandValueUser() == 21 && UserCards.Count == 2)
             {
+                totalScore += 2;
                 RoundEnd();
-                MessageBox.Show("Hurray! You got BlackJack");
-                PointsEarned();
+                MessageBox.Show("Hurray! You got BlackJack");           
             }
         }
         public void CheckBlackJackDealer()
         {
             if (CalculateHandValueDealer() == 21 && DealerCards.Count == 2)
             {
+                //PointsEarned();
                 RoundEnd();
                 MessageBox.Show("The dealer got BackJack. YOU LOOSE!");
             }
         }
         //Kollar om User har kort på handen som överstiger ett värde av 21.
-        public bool CheckBust()
+        public void CheckBust()
         {
             if (CalculateHandValueUser() >= 22)
             {
+                totalScore -= 1;
                 RoundEnd();
-                MessageBox.Show("You got more than 21, Bust! YOU LOOSE");
-            }
-            return true;
+                MessageBox.Show("You got more than 21, Bust! YOU LOOSE");                
+            }    
         }
         /*public bool CheckBustDealer()
         {
@@ -158,8 +160,8 @@ namespace GruppInlämning_4___BlackJack
             }
             if (CalculateHandValueDealer() >= 22)
             {
+                totalScore += 1;
                 MessageBox.Show("The dealer busted! YOU WIN!");
-                PointsEarned();
             }
             else if (CalculateHandValueDealer() == CalculateHandValueUser())
             {
@@ -167,35 +169,41 @@ namespace GruppInlämning_4___BlackJack
             }
             else if (CalculateHandValueDealer() < CalculateHandValueUser())
             {
-                MessageBox.Show("You Managed to WIN!");
-                PointsEarned();
+                totalScore += 1;
+                MessageBox.Show("You Managed to WIN!");              
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {
+                totalScore -= 1;
                 MessageBox.Show("The dealer won by a smidge!");
             }
+            //PointsEarned();
             RoundEnd();
-            
         }
-        public int PointsEarned()
-        {
-            int currentScore = 0;
-            if (CalculateHandValueUser() == 21)
-            {
-                currentScore++;
-                currentScore++;
-            }
-            else if (CalculateHandValueDealer() >= 22)
-            {
-                currentScore++;
-            }
-            else if (CalculateHandValueUser() > CalculateHandValueDealer())
-            {
-                currentScore++;
-            }
-            return currentScore;
-        }
-
+        //public int PointsEarned()
+        //{
+        //    //if (CalculateHandValueUser() == 21 && UserCards.Count == 2)
+        //    //{
+        //    //    totalScore += 2;
+        //    //}
+        //    else if (CalculateHandValueDealer() >= 22)
+        //    {
+                
+        //    }
+        //    else if (CalculateHandValueUser() > CalculateHandValueDealer())
+        //    {
+                
+        //    }
+        //    else if (CalculateHandValueUser() < CalculateHandValueDealer())
+        //    {
+        //        totalScore -=1;
+        //    }
+        //    //else if (CalculateHandValueUser() >= 22)
+        //    //{
+        //    //    totalScore -=1;
+        //    //}
+        //    return totalScore;
+        //}
 
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
@@ -207,7 +215,6 @@ namespace GruppInlämning_4___BlackJack
         {
             ResetCardDeck();
         }
-
         private void ResetCardDeck()
         {
             UserCards.Clear();

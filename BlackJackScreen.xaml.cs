@@ -45,6 +45,7 @@ namespace GruppInlämning_4___BlackJack
             }
 
             CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
         }
         public void DealerHand()
         {
@@ -53,6 +54,7 @@ namespace GruppInlämning_4___BlackJack
             SecondCardImageDealer.Source = new BitmapImage(new Uri(card.ImagePathBack, UriKind.Relative));
 
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
+            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
@@ -81,6 +83,7 @@ namespace GruppInlämning_4___BlackJack
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 cardMechanics.CheckBust();
                 UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
 
             }
             else if (FourthCardImageUser.Source == null)
@@ -97,6 +100,7 @@ namespace GruppInlämning_4___BlackJack
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 cardMechanics.CheckBust();
                 UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
             else if (FifthCardImageUser.Source == null)
             {
@@ -111,6 +115,7 @@ namespace GruppInlämning_4___BlackJack
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 cardMechanics.CheckBust();
                 UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
         }
         private void StandButton_Click(object sender, RoutedEventArgs e)
@@ -168,7 +173,7 @@ namespace GruppInlämning_4___BlackJack
             cardMechanics.CheckBlackJackDealer();
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
             UpdatePlayAgainButtonVisibility();
-            totalWinsLabel.Content = cardMechanics.PointsEarned();
+            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
 
         }
 
