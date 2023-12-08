@@ -159,6 +159,7 @@ namespace GruppInlämning_4___BlackJack
             if (CalculateHandValueDealer() >= 22)
             {
                 MessageBox.Show("The dealer busted! YOU WIN!");
+                PointsEarned();
             }
             else if (CalculateHandValueDealer() == CalculateHandValueUser())
             {
@@ -167,13 +168,14 @@ namespace GruppInlämning_4___BlackJack
             else if (CalculateHandValueDealer() < CalculateHandValueUser())
             {
                 MessageBox.Show("You Managed to WIN!");
+                PointsEarned();
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {
                 MessageBox.Show("The dealer won by a smidge!");
             }
             RoundEnd();
-            PointsEarned();
+            
         }
         public int PointsEarned()
         {
