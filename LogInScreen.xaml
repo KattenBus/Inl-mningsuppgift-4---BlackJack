@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
         mc:Ignorable="d"
-        Title="LogInScreen" Height="450" Width="800">
+        Title="LogInScreen" Height="900" Width="1600">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Login.png" Stretch="Fill"/>
         </Grid.Background>
-        <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Margin="298,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
-        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Margin="298,285,0,0" VerticalAlignment="Top" Width="183"/>
-        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="336,312,0,0" VerticalAlignment="Top" Click="loginButton_Click" Width="93" FontFamily="Showcard Gothic" Height="32" Foreground="Snow" BorderBrush="White">
+        <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Margin="721,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Margin="721,531,0,0" VerticalAlignment="Top" Width="183"/>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="759,558,0,0" VerticalAlignment="Top" Click="loginButton_Click" Width="93" FontFamily="Showcard Gothic" Height="32" Foreground="Snow" BorderBrush="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.747"/>
@@ -20,11 +20,11 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Please enter your details to login" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="251,141,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="251,0,0,0" VerticalAlignment="Center"/>
-        <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="283,115,0,0" VerticalAlignment="Top" Foreground="Red"/>
-        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="336,364,0,0" VerticalAlignment="Top" Width="93" Click="registerButton_Click" RenderTransformOrigin="0.629,1.39" FontFamily="Showcard Gothic" Height="35" BorderBrush="#FFFFFEFE" Foreground="White">
+        <Label Content="Please enter your details to login" HorizontalAlignment="Left" Margin="876,732,0,0" VerticalAlignment="Top"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="679,732,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="776,732,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="706,361,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="759,610,0,0" VerticalAlignment="Top" Width="93" Click="registerButton_Click" RenderTransformOrigin="0.629,1.39" FontFamily="Showcard Gothic" Height="35" BorderBrush="#FFFFFEFE" Foreground="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.735"/>
@@ -32,7 +32,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="210,238,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.525,1.693" FontSize="14" Foreground="#FFF9F3F3" FontFamily="Showcard Gothic"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="207,280,0,0" VerticalAlignment="Top" Foreground="#FFFDFCFC" FontSize="14" FontFamily="Showcard Gothic"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="633,484,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.525,1.693" FontSize="14" Foreground="#FFF9F3F3" FontFamily="Showcard Gothic"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="630,526,0,0" VerticalAlignment="Top" Foreground="#FFFDFCFC" FontSize="14" FontFamily="Showcard Gothic"/>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
         mc:Ignorable="d"
-        Title="RegistrationScreen" Height="450" Width="800">
+        Title="RegistrationScreen" Height="600" Width="600">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,17 +13,17 @@
                 <GradientStop Color="#FFC6C5D6" Offset="0.009"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="newUsernameInput" HorizontalAlignment="Center" Margin="0,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="newPasswordInput" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="confirmNewPasswordInput" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="failedRegistrationLabel" Content="" HorizontalAlignment="Left" Margin="296,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="216,231,0,0" VerticalAlignment="Top"/>
-        <Label Content="New password" HorizontalAlignment="Left" Margin="234,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="New username" HorizontalAlignment="Left" Margin="232,134,0,0" VerticalAlignment="Top"/>
-        <Label Content="REGISTER NOW TO PLAY BLACKJACK!" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <CheckBox x:Name="agreeTermsAndConditon" Content="You agree to our terms and conditions" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
-        <Button x:Name="regButton" Content="Register" HorizontalAlignment="Center" Margin="0,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,0.541" Click="regButton_Click" Width="77"/>
-        <Button x:Name="returnToLogIn" Content="Login" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top" Width="77" Click="returnToLogIn_Click"/>
+        <TextBox x:Name="newUsernameInput" HorizontalAlignment="Left" Margin="242,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="newPasswordInput" HorizontalAlignment="Left" Margin="242,258,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="confirmNewPasswordInput" HorizontalAlignment="Left" Margin="242,308,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="failedRegistrationLabel" Content="" HorizontalAlignment="Left" Margin="212,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Confirm password" HorizontalAlignment="Left" Margin="132,304,0,0" VerticalAlignment="Top"/>
+        <Label Content="New password" HorizontalAlignment="Left" Margin="150,254,0,0" VerticalAlignment="Top"/>
+        <Label Content="New username" HorizontalAlignment="Left" Margin="148,207,0,0" VerticalAlignment="Top"/>
+        <Label Content="REGISTER NOW TO PLAY BLACKJACK!" HorizontalAlignment="Left" Margin="148,142,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <CheckBox x:Name="agreeTermsAndConditon" Content="You agree to our terms and conditions" HorizontalAlignment="Left" Margin="173,354,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+        <Button x:Name="regButton" Content="Register" HorizontalAlignment="Left" Margin="248,390,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.097,0.541" Click="regButton_Click" Width="78"/>
+        <Button x:Name="returnToLogIn" Content="Login" HorizontalAlignment="Left" Margin="248,437,0,0" VerticalAlignment="Top" Width="78" Click="returnToLogIn_Click"/>
 
     </Grid>
 </Window>

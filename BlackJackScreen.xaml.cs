@@ -69,7 +69,6 @@ namespace GruppInlämning_4___BlackJack
 
         private void HitButton_Click(object sender, RoutedEventArgs e)
         {
-
             if (ThirdCardImageUser.Source == null)
             {
                 Cards card3 = cardMechanics.DealCardUser();

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="1600">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/GameMenu.png"/>
         </Grid.Background>
-        <Button x:Name="GoToHighScoreScreenButton" Content="High Score" HorizontalAlignment="Left" Margin="370,320,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="31" Width="100" Foreground="White" BorderBrush="#FFFFFEFE">
+        <Button x:Name="GoToHighScoreScreenButton" Content="High Score" HorizontalAlignment="Left" Margin="710,450,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="100" Width="250" Foreground="White" BorderBrush="#FFFFFEFE">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -18,7 +18,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="GoToBlackJackButton" Content="Black Jack" HorizontalAlignment="Left" Margin="370,265,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click" FontFamily="Franklin Gothic Heavy" Height="35" Width="100" FontSize="14" Foreground="#FFF3F1EF" BorderBrush="Snow">
+        <Button x:Name="GoToBlackJackButton" Content="Black Jack" HorizontalAlignment="Left" Margin="414,450,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="#FFF3F1EF" BorderBrush="Snow">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -26,7 +26,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="370,371,0,0" VerticalAlignment="Top" Click="logOutButton_Click" FontFamily="Franklin Gothic Heavy" Height="30" Width="100" FontSize="14" Foreground="White" BorderBrush="#FFFDFDFD">
+        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="997,450,0,0" VerticalAlignment="Top" Click="logOutButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="White" BorderBrush="#FFFDFDFD">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
