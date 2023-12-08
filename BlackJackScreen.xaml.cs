@@ -168,7 +168,11 @@ namespace GruppInlämning_4___BlackJack
             cardMechanics.CheckBlackJackDealer();
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
             UpdatePlayAgainButtonVisibility();
+            totalWinsLabel.Content = cardMechanics.PointsEarned();
+
         }
+
+
 
         private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
         {
@@ -206,5 +210,8 @@ namespace GruppInlämning_4___BlackJack
                 PlayAgainButton.Visibility = Visibility.Hidden;
             }
         }
+        
+
     }
+
 }
