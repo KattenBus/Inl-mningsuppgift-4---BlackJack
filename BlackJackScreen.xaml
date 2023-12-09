@@ -31,5 +31,6 @@
         <Image x:Name="SeventhCardImageUser" HorizontalAlignment="Left" Height="250" Margin="68,23,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SixthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="156,23,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SeventhCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="595,442,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="DoubleButton" Content="Double" HorizontalAlignment="Left" Margin="432,742,0,0" VerticalAlignment="Top" Height="56" Width="104" Click="DoubleButton_Click" IsEnabled="False"/>
     </Grid>
 </Window>
