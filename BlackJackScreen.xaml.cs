@@ -31,7 +31,7 @@ namespace GruppInlämning_4___BlackJack
         {
             this.cardMechanics = cardmechanics;
         }
-        public void UserHand()
+        public void DealHandUser()
         {
             Cards card = cardMechanics.DealCardUser();
             FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
@@ -47,7 +47,7 @@ namespace GruppInlämning_4___BlackJack
             CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
             totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
         }
-        public void DealerHand()
+        public void DealHandDealer()
         {
             Cards card = cardMechanics.DealCardDealer();
             FirstCardImageDealer.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
@@ -58,8 +58,8 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
-            UserHand();
-            DealerHand();
+            DealHandUser();
+            DealHandDealer();
             cardMechanics.CheckBlackJack();
             UpdatePlayAgainButtonVisibility();
             DealCardButton.IsEnabled = false;
@@ -79,6 +79,11 @@ namespace GruppInlämning_4___BlackJack
                 {
                     card3.Value = 1;
                 }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 cardMechanics.CheckBust();
                 UpdatePlayAgainButtonVisibility();
@@ -94,6 +99,11 @@ namespace GruppInlämning_4___BlackJack
                     card4.ID == "Diamonds Ace" || card4.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
                 {
                     card4.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
                 }
 
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
@@ -111,18 +121,67 @@ namespace GruppInlämning_4___BlackJack
                 {
                     card5.Value = 1;
                 }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 cardMechanics.CheckBust();
                 UpdatePlayAgainButtonVisibility();
                 totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
+            else if (SixthCardImageUser.Source == null)
+            {
+                Cards card6 = cardMechanics.DealCardUser();
+                FifthCardImageUser.Source = new BitmapImage(new Uri(card6.ImagePathFront, UriKind.Relative));
+
+                if ((card6.ID == "Hearts Ace" || card6.ID == "Spades Ace" ||
+                    card6.ID == "Diamonds Ace" || card6.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                {
+                    card6.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+
+                CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+                cardMechanics.CheckBust();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            }
+            else if (SeventhCardImageUser.Source == null)
+            {
+                Cards card7 = cardMechanics.DealCardUser();
+                FifthCardImageUser.Source = new BitmapImage(new Uri(card7.ImagePathFront, UriKind.Relative));
+
+                if ((card7.ID == "Hearts Ace" || card7.ID == "Spades Ace" ||
+                    card7.ID == "Diamonds Ace" || card7.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                {
+                    card7.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+
+                CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+                cardMechanics.CheckBust();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            }
+
         }
         private void StandButton_Click(object sender, RoutedEventArgs e)
         {
             while (cardMechanics.CalculateHandValueDealer() <= 16)
             {
                 if (cardMechanics.DealerCards.Count < 2)
-                {
+                { 
                     Cards card2 = cardMechanics.DealCardDealer();
                     SecondCardImageDealer.Source = new BitmapImage(new Uri(card2.ImagePathFront, UriKind.Relative));
 
@@ -161,6 +220,51 @@ namespace GruppInlämning_4___BlackJack
                         card4.ID == "Diamonds Ace" || card4.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
                     {
                         card4.Value = 1;
+                    }
+
+                    CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
+                    //cardMechanics.CheckBustDealer();
+                    UpdatePlayAgainButtonVisibility();
+                }
+                else if (FifthCardImageDealer.Source == null)
+                {
+                    Cards card5 = cardMechanics.DealCardDealer();
+                    FifthCardImageDealer.Source = new BitmapImage(new Uri(card5.ImagePathFront, UriKind.Relative));
+
+                    if ((card5.ID == "Hearts Ace" || card5.ID == "Spades Ace" ||
+                        card5.ID == "Diamonds Ace" || card5.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                    {
+                        card5.Value = 1;
+                    }
+
+                    CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
+                    //cardMechanics.CheckBustDealer();
+                    UpdatePlayAgainButtonVisibility();
+                }
+                else if (SixthCardImageDealer.Source == null)
+                {
+                    Cards card6 = cardMechanics.DealCardDealer();
+                    FifthCardImageDealer.Source = new BitmapImage(new Uri(card6.ImagePathFront, UriKind.Relative));
+
+                    if ((card6.ID == "Hearts Ace" || card6.ID == "Spades Ace" ||
+                        card6.ID == "Diamonds Ace" || card6.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                    {
+                        card6.Value = 1;
+                    }
+
+                    CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
+                    //cardMechanics.CheckBustDealer();
+                    UpdatePlayAgainButtonVisibility();
+                }
+                else if (SeventhCardImageDealer.Source == null)
+                {
+                    Cards card7 = cardMechanics.DealCardDealer();
+                    FifthCardImageDealer.Source = new BitmapImage(new Uri(card7.ImagePathFront, UriKind.Relative));
+
+                    if ((card7.ID == "Hearts Ace" || card7.ID == "Spades Ace" ||
+                        card7.ID == "Diamonds Ace" || card7.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                    {
+                        card7.Value = 1;
                     }
 
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
