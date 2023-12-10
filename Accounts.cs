@@ -16,5 +16,10 @@ namespace GruppInlämning_4___BlackJack
             this.Username = username;
             this.Password = password;
         }
+
+        public string GetCSV()
+        {
+            return Username + "," + Password;
+        }
     }
 }
