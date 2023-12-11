@@ -540,7 +540,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card2.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
@@ -556,7 +560,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card3.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
@@ -571,7 +579,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card4.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
@@ -586,7 +598,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card5.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
@@ -601,7 +617,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card6.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
@@ -616,7 +636,11 @@ namespace GruppInlämning_4___BlackJack
                     {
                         card7.Value = 1;
                     }
-
+                    if (cardMechanics.CalculateHandValueDealer() > 21 && cardMechanics.DealerCards.Any(card => card.ID.Contains("Ace")))
+                    {
+                        var aceCard = cardMechanics.DealerCards.First(card => card.ID.Contains("Ace"));
+                        aceCard.Value = 1;
+                    }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
                     //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();

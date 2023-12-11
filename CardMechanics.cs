@@ -308,7 +308,7 @@ namespace GruppInlämning_4___BlackJack
             {
                 if (CalculateHandValueUser() == 0)
                 {
-                    MessageBox.Show("You already lost points on your 1st hand.");
+                    MessageBox.Show("You already lost points on your 1st hand.");         
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
@@ -319,34 +319,51 @@ namespace GruppInlämning_4___BlackJack
                 {
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
-
-                    if (UserHasSplit == true)
+                }
+                if (UserHasSplit == true)
+                {
+                    if (CalculateHandValueDealer() < CalculateHandValueUserSplit())
                     {
-                        if (CalculateHandValueDealer() < CalculateHandValueUserSplit())
+                        if (CalculateHandValueUserSplit() == 0)
                         {
-                            if (CalculateHandValueUserSplit() == 0)
-                            {
-                                MessageBox.Show("You already lost points on your second hand.");
-                            }
-                            if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
-                            {
-                                totalScore += 2;
-                                MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
-                            }
-                            else if (CalculateHandValueUserSplit() > 0)
-                            {
-                                totalScore += 1;
-                                MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
-                            }
+                            MessageBox.Show("You already lost points on your second hand.");
+                        }
+                        if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
+                        {
+                            totalScore += 2;
+                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
+                        }
+                        else if (CalculateHandValueUserSplit() > 0)
+                        {
+                            totalScore += 1;
+                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                         }
                     }
-                }
+                }            
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {
                 if (CalculateHandValueUser() == 0)
                 {
                     MessageBox.Show("Already calculated the point for your first hand.");
+
+                    if (CalculateHandValueDealer() < CalculateHandValueUserSplit())
+                    {
+                        if (CalculateHandValueUserSplit() == 0)
+                        {
+                            MessageBox.Show("You already lost points on your second hand.");
+                        }
+                        if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
+                        {
+                            totalScore += 2;
+                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
+                        }
+                        else if (CalculateHandValueUserSplit() > 0)
+                        {
+                            totalScore += 1;
+                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
+                        }
+                    }
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
