@@ -22,11 +22,10 @@ namespace GruppInlämning_4___BlackJack
     {
         List<Accounts> accountList = new List<Accounts>();
 
-        Accounts testAccount = new Accounts("1", "1");
         public LogInScreen()
         {
             InitializeComponent();
-            accountList.Add(testAccount);
+            LoadAccounts();
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
@@ -39,6 +38,7 @@ namespace GruppInlämning_4___BlackJack
                 if (username == accounts.Username && password == accounts.Password) 
                 {
                     passwordInput.Password = "";
+                    failLabel.Content = "";
                     GameMenu gameMenu = new GameMenu();
                     gameMenu.welcomeLabel.Content = $"Welcome {username}!";
                     gameMenu.currentUser = username;
@@ -56,6 +56,34 @@ namespace GruppInlämning_4___BlackJack
             RegistrationScreen registrationScreen = new RegistrationScreen();
             registrationScreen.Show();
             registrationScreen.SetAccountList(accountList);
+        }
+
+        string folderPath = "csvFolder";
+        string path = "csvFolder/accounts.csv";
+        string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
+        private void LoadAccounts()
+        {
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    sr.ReadLine();
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        string[] strings = line.Split(",");
+
+                        string username = strings[0];
+                        string password = strings[1];
+
+                        Accounts newAcc = new Accounts(username, password);
+                        accountList.Add(newAcc);
+
+                        line = sr.ReadLine();
+                    }
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -66,6 +67,7 @@ namespace GruppInlämning_4___BlackJack
                     accountList.Add(newAcc);
                     failedRegistrationLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
                     failedRegistrationLabel.Content = "You have sucessfully registered an account";
+                    StoreAccount();
                 }
 
                 else if (password == "" && confirmPassword == "")
@@ -83,6 +85,25 @@ namespace GruppInlämning_4___BlackJack
 
             newPasswordInput.Password = "";
             confirmNewPasswordInput.Password = "";
+        }
+
+        string folderPath = "csvFolder";
+        string path = "csvFolder/accounts.csv";
+        string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
+        
+        private void StoreAccount()
+        {
+            Directory.CreateDirectory(folderPath);
+            File.Delete(path);
+
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine("Username,Password");
+                foreach (Accounts accounts in accountList)
+                {
+                    sw.WriteLine(accounts.GetCSV());
+                }
+            }
         }
 
         private void returnToLogIn_Click(object sender, RoutedEventArgs e)

@@ -20,9 +20,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label Content="Please enter your details to login" HorizontalAlignment="Left" Margin="876,732,0,0" VerticalAlignment="Top"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="679,732,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="776,732,0,0" VerticalAlignment="Top"/>
         <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="706,361,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="759,610,0,0" VerticalAlignment="Top" Width="93" Click="registerButton_Click" RenderTransformOrigin="0.629,1.39" FontFamily="Showcard Gothic" Height="35" BorderBrush="#FFFFFEFE" Foreground="White">
             <Button.Background>

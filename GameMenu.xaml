@@ -34,7 +34,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Label x:Name="welcomeLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="welcomeLabel" Content="" Margin="448,96,378,0" VerticalAlignment="Top" Foreground="White" FontSize="30" FontFamily="Franklin Gothic Heavy" HorizontalContentAlignment="Center"/>
 
     </Grid>
 </Window>
