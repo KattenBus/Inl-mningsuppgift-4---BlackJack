@@ -12,30 +12,30 @@
         </Grid.Background>
         <Image x:Name="FirstCardImageUser" HorizontalAlignment="Left" Height="250" Margin="483,596,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SecondCardImageUser" HorizontalAlignment="Left" Height="250" Margin="594,596,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="568,10,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="661,10,0,0" VerticalAlignment="Top" Width="175" />
-        <Button x:Name="DealCardButton" Content="Deal" HorizontalAlignment="Left" Margin="466,416,0,0" VerticalAlignment="Top" Click="DealCardButton_Click" Height="80" Width="150" FontSize="24" FontFamily="Showcard Gothic"/>
+        <Image x:Name="FirstCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="568,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="SecondCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="689,23,0,0" VerticalAlignment="Top" Width="175" />
+        <Button x:Name="DealCardButton" Content="Deal" HorizontalAlignment="Left" Margin="191,416,0,0" VerticalAlignment="Top" Click="DealCardButton_Click" Height="80" Width="150" FontSize="24" FontFamily="Showcard Gothic"/>
         <Label x:Name="CardTotalDealerLabel" Content="CardTotalDealer" HorizontalAlignment="Left" Margin="306,275,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label x:Name="CardTotalUserLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="1325,510,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="CardTotalUserLabel" Content="CardTotalUser" HorizontalAlignment="Left" Margin="1334,538,0,0" VerticalAlignment="Top" FontSize="36" RenderTransformOrigin="0.497,1.518"/>
         <Image x:Name="ThirdCardImageUser" HorizontalAlignment="Left" Height="250" Margin="689,596,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="FourthCardImageUser" HorizontalAlignment="Left" Height="250" Margin="800,596,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="650,416,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="HitButton_Click" IsEnabled="False" FontSize="24" FontFamily="Showcard Gothic"/>
-        <Button x:Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="839,416,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="StandButton_Click" IsEnabled="False" FontSize="24" FontFamily="Showcard Gothic"/>
+        <Button x:Name="HitButton" Content="Hit" HorizontalAlignment="Left" Margin="375,416,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="HitButton_Click" IsEnabled="False" FontSize="24" FontFamily="Showcard Gothic"/>
+        <Button x:Name="StandButton" Content="Stand" HorizontalAlignment="Left" Margin="564,416,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="StandButton_Click" IsEnabled="False" FontSize="24" FontFamily="Showcard Gothic"/>
         <Button x:Name="PlayAgainButton" Content="PLAY AGAIN!" HorizontalAlignment="Center" Margin="0,388,0,0" VerticalAlignment="Top" Height="180" Width="312" Click="PlayAgainButton_Click" Visibility="hidden"/>
         <Image x:Name="FifthCardImageUser" HorizontalAlignment="Left" Height="250" Margin="989,605,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="ThirdCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="426,23,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="FourthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="323,23,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="FifthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="236,23,0,0" VerticalAlignment="Top" Width="175"/>
-        <Label x:Name="totalWinsLabel" Content="Total Wins: " HorizontalAlignment="Left" Margin="535,807,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Image x:Name="ThirdCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="800,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="FourthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="902,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="FifthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="1014,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="totalWinsLabel" Content="Total Wins: " HorizontalAlignment="Left" Margin="350,803,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Image x:Name="SixthCardImageUser" HorizontalAlignment="Left" Height="250" Margin="902,605,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="SeventhCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="68,23,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="SixthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="156,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="SeventhCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="1174,23,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="SixthCardImageDealer" HorizontalAlignment="Left" Height="250" Margin="1092,23,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SeventhCardImageUser" HorizontalAlignment="Left" Height="250" Margin="817,605,0,0" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="DoubleButton" Content="Double" HorizontalAlignment="Left" Margin="316,742,0,0" VerticalAlignment="Top" Height="56" Width="104" Click="DoubleButton_Click" IsEnabled="False"/>
-        <Button x:Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="432,713,0,0" VerticalAlignment="Top" Height="85" Width="113" Click="SplitButton_Click" IsEnabled="False"/>
-        <Image x:Name="FirstCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1393,275,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="DoubleButton" Content="Double" HorizontalAlignment="Left" Margin="375,511,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="DoubleButton_Click" IsEnabled="False" FontFamily="Showcard Gothic" FontSize="24"/>
+        <Button x:Name="SplitButton" Content="Split" HorizontalAlignment="Left" Margin="191,511,0,0" VerticalAlignment="Top" Height="80" Width="150" Click="SplitButton_Click" IsEnabled="False" RenderTransformOrigin="6.245,-3.526" FontFamily="Showcard Gothic" FontSize="24"/>
+        <Image x:Name="FirstCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1393,275,0,0" VerticalAlignment="Top" Width="175" RenderTransformOrigin="0.519,0.47"/>
         <Image x:Name="SecondCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1289,275,0,0" VerticalAlignment="Top" Width="175"/>
-        <Image x:Name="ThirdCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1180,275,0,0" VerticalAlignment="Top" Width="175"/>
+        <Image x:Name="ThirdCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1199,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="FourthCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="1092,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="FifthCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="989,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SixthCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="902,275,0,0" VerticalAlignment="Top" Width="175"/>
