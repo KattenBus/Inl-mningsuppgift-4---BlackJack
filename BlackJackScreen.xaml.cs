@@ -21,6 +21,7 @@ namespace GruppInlämning_4___BlackJack
     public partial class BlackJackScreen : Window
     {
         CardMechanics cardMechanics;
+        public bool UserHasSplitAndStood = false;
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
@@ -60,6 +61,11 @@ namespace GruppInlämning_4___BlackJack
         {
             DealHandUser();
             DealHandDealer();
+            cardMechanics.Split();
+            if (cardMechanics.CanSplit == true)
+            {
+                SplitButton.IsEnabled = true;
+            }
             UpdatePlayAgainButtonVisibility();
             DealCardButton.IsEnabled = false;
             HitButton.IsEnabled = true;
@@ -68,25 +74,72 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DoubleButton_Click(object sender, RoutedEventArgs e)
         {
-            cardMechanics.Double();
-
-            Cards card3 = cardMechanics.DealCardUser();
-            ThirdCardImageUser.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
-
-            if ((card3.ID == "Hearts Ace" || card3.ID == "Spades Ace" ||
-                card3.ID == "Diamonds Ace" || card3.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+            if (cardMechanics.UserHasSplit == false)
             {
-                card3.Value = 1;
+                cardMechanics.Double();
+
+                Cards card3 = cardMechanics.DealCardUser();
+                ThirdCardImageUser.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
+
+                if ((card3.ID == "Hearts Ace" || card3.ID == "Spades Ace" ||
+                    card3.ID == "Diamonds Ace" || card3.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                {
+                    card3.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+                cardMechanics.CheckBust();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
-            if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+            if (UserHasSplitAndStood == true)
             {
-                var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
-                aceCard.Value = 1;
+                cardMechanics.DoubleSplit();
+
+                Cards card3 = cardMechanics.DealCardUserSplit();
+                ThirdCardImageUserSplit.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
+
+                if ((card3.ID == "Hearts Ace" || card3.ID == "Spades Ace" ||
+                    card3.ID == "Diamonds Ace" || card3.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                {
+                    card3.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
-            CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
-            cardMechanics.CheckBust();
-            UpdatePlayAgainButtonVisibility();
-            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            else if (cardMechanics.UserHasSplit == true)
+            {
+                cardMechanics.Double();
+
+                Cards card3 = cardMechanics.DealCardUser();
+                ThirdCardImageUser.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
+
+                if ((card3.ID == "Hearts Ace" || card3.ID == "Spades Ace" ||
+                    card3.ID == "Diamonds Ace" || card3.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+                {
+                    card3.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUser() > 21 && cardMechanics.UserCards.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCards.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+                cardMechanics.CheckBust();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            }
+            //Logikfel.
 
             if (cardMechanics.isGameFinished == true)
             {
@@ -96,10 +149,15 @@ namespace GruppInlämning_4___BlackJack
             {
                 PerformStandButton_ClickLogic();
             }
+
         }
         private void HitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ThirdCardImageUser.Source == null)
+            if (UserHasSplitAndStood == true)
+            {
+                UserCanAddCardsToNewHand();
+            }
+            else if (ThirdCardImageUser.Source == null)
             {
                 Cards card3 = cardMechanics.DealCardUser();
                 ThirdCardImageUser.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
@@ -208,9 +266,129 @@ namespace GruppInlämning_4___BlackJack
         }
         private void StandButton_Click(object sender, RoutedEventArgs e)
         {
-            PerformStandButton_ClickLogic();
+            if (cardMechanics.UserHasSplit == true && UserHasSplitAndStood == true)
+            {
+                PerformStandButton_ClickLogic();
+            }
+            else if (cardMechanics.UserHasSplit == true)
+            {
+                MessageBox.Show("Play you second hand!");
+                UserHasSplitAndStood = true;
+            }
+            else
+            {
+                PerformStandButton_ClickLogic();
+            }      
         }
-        public void PerformStandButton_ClickLogic()
+        private void UserCanAddCardsToNewHand()
+        {
+            if (ThirdCardImageUserSplit.Source == null)
+            {
+                Cards card3 = cardMechanics.DealCardUserSplit();
+                ThirdCardImageUserSplit.Source = new BitmapImage(new Uri(card3.ImagePathFront, UriKind.Relative));
+
+                if ((card3.ID == "Hearts Ace" || card3.ID == "Spades Ace" ||
+                    card3.ID == "Diamonds Ace" || card3.ID == "Clover Ace") && cardMechanics.CalculateHandValueUserSplit() > 21)
+                {
+                    card3.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            }
+            else if (FourthCardImageUserSplit.Source == null)
+            {
+                Cards card4 = cardMechanics.DealCardUserSplit();
+                FourthCardImageUserSplit.Source = new BitmapImage(new Uri(card4.ImagePathFront, UriKind.Relative));
+
+                if ((card4.ID == "Hearts Ace" || card4.ID == "Spades Ace" ||
+                    card4.ID == "Diamonds Ace" || card4.ID == "Clover Ace") && cardMechanics.CalculateHandValueUserSplit() > 21)
+                {
+                    card4.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            }
+            else if (FifthCardImageUserSplit.Source == null)
+            {
+                Cards card5 = cardMechanics.DealCardUserSplit();
+                FifthCardImageUserSplit.Source = new BitmapImage(new Uri(card5.ImagePathFront, UriKind.Relative));
+
+                if ((card5.ID == "Hearts Ace" || card5.ID == "Spades Ace" ||
+                    card5.ID == "Diamonds Ace" || card5.ID == "Clover Ace") && cardMechanics.CalculateHandValueUserSplit() > 21)
+                {
+                    card5.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            }
+            else if (SixthCardImageUserSplit.Source == null)
+            {
+                Cards card6 = cardMechanics.DealCardUserSplit();
+                SixthCardImageUserSplit.Source = new BitmapImage(new Uri(card6.ImagePathFront, UriKind.Relative));
+
+                if ((card6.ID == "Hearts Ace" || card6.ID == "Spades Ace" ||
+                    card6.ID == "Diamonds Ace" || card6.ID == "Clover Ace") && cardMechanics.CalculateHandValueUserSplit() > 21)
+                {
+                    card6.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            }
+            else if (SeventhCardImageUserSplit.Source == null)
+            {
+                Cards card7 = cardMechanics.DealCardUserSplit();
+                SeventhCardImageUserSplit.Source = new BitmapImage(new Uri(card7.ImagePathFront, UriKind.Relative));
+
+                if ((card7.ID == "Hearts Ace" || card7.ID == "Spades Ace" ||
+                    card7.ID == "Diamonds Ace" || card7.ID == "Clover Ace") && cardMechanics.CalculateHandValueUserSplit() > 21)
+                {
+                    card7.Value = 1;
+                }
+                if (cardMechanics.CalculateHandValueUserSplit() > 21 && cardMechanics.UserCardsSplit.Any(card => card.ID.Contains("Ace")))
+                {
+                    var aceCard = cardMechanics.UserCardsSplit.First(card => card.ID.Contains("Ace"));
+                    aceCard.Value = 1;
+                }
+                CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+                cardMechanics.CheckBustSplit();
+                UpdatePlayAgainButtonVisibility();
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            }
+        }
+            public void PerformStandButton_ClickLogic()
         {
             while (cardMechanics.CalculateHandValueDealer() <= 16)
             {
@@ -324,6 +502,13 @@ namespace GruppInlämning_4___BlackJack
             FifthCardImageUser.Source = null;
             SixthCardImageUser.Source = null;
             SeventhCardImageUser.Source = null;
+            FirstCardImageUserSplit.Source = null;
+            SecondCardImageUserSplit.Source = null;
+            ThirdCardImageUserSplit.Source = null;
+            FourthCardImageUserSplit.Source = null;
+            FifthCardImageUserSplit.Source = null;
+            SixthCardImageUserSplit.Source = null;
+            SeventhCardImageUserSplit.Source = null;
             FirstCardImageDealer.Source = null;
             SecondCardImageDealer.Source = null;
             ThirdCardImageDealer.Source = null;
@@ -334,12 +519,19 @@ namespace GruppInlämning_4___BlackJack
             CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
 
+
             DealCardButton.IsEnabled = true;
             HitButton.IsEnabled = false;
             StandButton.IsEnabled = false;
             DoubleButton.IsEnabled = false;
             cardMechanics.isGameFinished = false;
             cardMechanics.DoubleInitiated = false;
+            cardMechanics.DoubleInitiatedSplit = false;
+            cardMechanics.CanSplit = false;
+            cardMechanics.UserHasSplit = false;
+            SplitButton.IsEnabled = false;
+            UserHasSplitAndStood = false;
+            CardTotalUserSplitLabel.Visibility = Visibility.Hidden;
             UpdatePlayAgainButtonVisibility();
         }
         private void UpdatePlayAgainButtonVisibility()
@@ -355,6 +547,45 @@ namespace GruppInlämning_4___BlackJack
             {
                 PlayAgainButton.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void SplitButton_Click(object sender, RoutedEventArgs e)
+        {
+            cardMechanics.UserHasSplit = true;
+            CardTotalUserSplitLabel.Visibility = Visibility.Visible;
+
+            Cards cardToSplit = cardMechanics.UserCards[1];
+
+            cardMechanics.UserCards.Remove(cardToSplit);
+            cardMechanics.UserCardsSplit.Add(cardToSplit);
+
+            FirstCardImageUserSplit.Source = new BitmapImage(new Uri(cardToSplit.ImagePathFront, UriKind.Relative));
+
+            Cards cardNew = cardMechanics.DealCardUser();
+            SecondCardImageUser.Source = new BitmapImage(new Uri(cardNew.ImagePathFront, UriKind.Relative));
+
+            if ((cardNew.ID == "Hearts Ace" || cardNew.ID == "Spades Ace" ||
+                cardNew.ID == "Diamonds Ace" || cardNew.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+            {
+                cardNew.Value = 1;
+            }
+            cardMechanics.CheckBlackJack();
+            CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
+            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            Cards card2NewHand = cardMechanics.DealCardUserSplit();
+            SecondCardImageUserSplit.Source = new BitmapImage(new Uri(card2NewHand.ImagePathFront, UriKind.Relative));
+
+            if ((card2NewHand.ID == "Hearts Ace" || card2NewHand.ID == "Spades Ace" ||
+                card2NewHand.ID == "Diamonds Ace" || card2NewHand.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
+            {
+                card2NewHand.Value = 1;
+            }
+            cardMechanics.CheckBlackJackSplit();
+            CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
+            totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+
+            SplitButton.IsEnabled = false;
         }
     }
 
