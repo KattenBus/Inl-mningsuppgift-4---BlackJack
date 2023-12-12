@@ -364,6 +364,10 @@ namespace GruppInlämning_4___BlackJack
             {
                 PerformStandButton_ClickLogic();
             }
+            else if (cardMechanics.CheckBlackJackSplitIsTrue == true)
+            {
+                PerformStandButton_ClickLogic();
+            }
             else if (cardMechanics.UserHasSplit == true)
             {
                 MessageBox.Show("Play you second hand!");
@@ -737,6 +741,13 @@ namespace GruppInlämning_4___BlackJack
             cardMechanics.UserCards.Remove(cardToSplit);
             cardMechanics.UserCardsSplit.Add(cardToSplit);
 
+            if (cardToSplit.ID.Contains("Ace"))
+            { 
+
+            cardToSplit.Value = 11;
+
+            }
+
             FirstCardImageUserSplit.Source = new BitmapImage(new Uri(cardToSplit.ImagePathFront, UriKind.Relative));
 
             Cards cardNew = cardMechanics.DealCardUser();
@@ -768,7 +779,6 @@ namespace GruppInlämning_4___BlackJack
             if (cardMechanics.CheckBlackJackSplitIsTrue == true)
             {
                 cardMechanics.UserCardsSplit.Clear();
-                UserHasSplitAndStood = true;
             }
             CardTotalUserSplitLabel.Content = cardMechanics.CalculateHandValueUserSplit();
             totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;

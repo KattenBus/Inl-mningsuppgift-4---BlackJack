@@ -413,7 +413,7 @@ namespace GruppInlämning_4___BlackJack
                 {
                     MessageBox.Show("Already calculated the points for your second hand.");
                 }
-                if (CalculateHandValueDealer() > CalculateHandValueUserSplit())
+                if (CalculateHandValueDealer() > CalculateHandValueUserSplit() && CalculateHandValueDealer() <=21)
                 {
                     if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
                     {
