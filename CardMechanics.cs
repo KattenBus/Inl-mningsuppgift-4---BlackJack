@@ -23,7 +23,7 @@ namespace GruppInlämning_4___BlackJack
         public bool CanSplit = false;
         public bool UserHasSplit = false;
         public bool CheckBlackJackSplitIsTrue = false;
-        public bool CheckBlackJackIsTrue = true;
+        public bool CheckBlackJackIsTrue = false;
 
         //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
         public int totalScore = 0;
@@ -160,13 +160,13 @@ namespace GruppInlämning_4___BlackJack
                     MessageBox.Show("Hurray! You got BlackJack");
                     totalScore += 2;
                     CheckBlackJackIsTrue = true;
-
                 }
 
             }
             else if (CalculateHandValueUser() == 21 && UserCards.Count == 2 && UserHasSplit == false)
             {
                 totalScore += 2;
+                CheckBlackJackIsTrue = true;
                 RoundEnd();
                 MessageBox.Show("Hurray! You got BlackJack");
             }
@@ -320,26 +320,10 @@ namespace GruppInlämning_4___BlackJack
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
                 }
-                if (UserHasSplit == true)
-                {
-                    if (CalculateHandValueDealer() < CalculateHandValueUserSplit())
-                    {
-                        if (CalculateHandValueUserSplit() == 0)
-                        {
-                            MessageBox.Show("You already lost points on your second hand.");
-                        }
-                        if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
-                        {
-                            totalScore += 2;
-                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
-                        }
-                        else if (CalculateHandValueUserSplit() > 0)
-                        {
-                            totalScore += 1;
-                            MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
-                        }
-                    }
-                }            
+                //if (UserHasSplit == true)
+                //{
+
+                //}            
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {
@@ -375,26 +359,10 @@ namespace GruppInlämning_4___BlackJack
                     totalScore -= 1;
                     MessageBox.Show("The dealer won by a smidge!");
                 }
-                if (UserHasSplit == true)
-                {
-                    if (CalculateHandValueUserSplit() == 0)
-                    {
-                        MessageBox.Show("Already calculated the points for your second hand.");
-                    }
-                    if (CalculateHandValueDealer() > CalculateHandValueUserSplit())
-                    {
-                        if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
-                        {
-                            totalScore -= 2;
-                            MessageBox.Show("The dealer won by a smidge!YOU LOSE YOUR SECOND HAND!");
-                        }
-                        else if (CalculateHandValueUserSplit() > 0)
-                        {
-                            totalScore -= 1;
-                            MessageBox.Show("The dealer won by a smidge!YOU LOSE YOUR SECOND HAND!");
-                        }
-                    }
-                }
+                //if (UserHasSplit == true)
+                //{
+
+                //}
             }
             else if (CalculateHandValueDealer() == CalculateHandValueUser())
             {
@@ -406,20 +374,10 @@ namespace GruppInlämning_4___BlackJack
                 {
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
-                if (UserHasSplit == true)
-                {
-                    if (CalculateHandValueDealer() == CalculateHandValueUserSplit())
-                    {
-                        if (DoubleInitiated == true)
-                        {
-                            MessageBox.Show("Woah! Even Steven on your second hand! Let's go again!");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Woah! Even Steven on you second hand! Let's go again!");
-                        }
-                    }
-                }
+                //if (UserHasSplit == true)
+                //{
+
+                //}
             }
             if (UserHasSplit == true)
             {
@@ -432,6 +390,40 @@ namespace GruppInlämning_4___BlackJack
                     else
                     {
                         MessageBox.Show("Woah! Even Steven on you second hand! Let's go again!");
+                    }
+                }
+                if (CalculateHandValueDealer() < CalculateHandValueUserSplit())
+                {
+                    if (CalculateHandValueUserSplit() == 0)
+                    {
+                        MessageBox.Show("You already lost points on your second hand.");
+                    }
+                    if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
+                    {
+                        totalScore += 2;
+                        MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
+                    }
+                    else if (CalculateHandValueUserSplit() > 0)
+                    {
+                        totalScore += 1;
+                        MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
+                    }
+                }
+                if (CalculateHandValueUserSplit() == 0)
+                {
+                    MessageBox.Show("Already calculated the points for your second hand.");
+                }
+                if (CalculateHandValueDealer() > CalculateHandValueUserSplit())
+                {
+                    if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
+                    {
+                        totalScore -= 2;
+                        MessageBox.Show("The dealer won by a smidge!YOU LOSE YOUR SECOND HAND!");
+                    }
+                    else if (CalculateHandValueUserSplit() > 0)
+                    {
+                        totalScore -= 1;
+                        MessageBox.Show("The dealer won by a smidge!YOU LOSE YOUR SECOND HAND!");
                     }
                 }
             }           

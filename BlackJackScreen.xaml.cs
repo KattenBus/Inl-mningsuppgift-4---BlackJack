@@ -44,7 +44,6 @@ namespace GruppInlämning_4___BlackJack
             {
                 card.Value = 1;
             }
-            cardMechanics.CheckBlackJack();
             CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
             totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
         }
@@ -62,15 +61,29 @@ namespace GruppInlämning_4___BlackJack
             DealHandUser();
             DealHandDealer();
             cardMechanics.Split();
+            cardMechanics.CheckBlackJack();
             if (cardMechanics.CanSplit == true)
             {
                 SplitButton.IsEnabled = true;
             }
-            UpdatePlayAgainButtonVisibility();
-            DealCardButton.IsEnabled = false;
-            HitButton.IsEnabled = true;
-            StandButton.IsEnabled = true;
-            DoubleButton.IsEnabled = true;
+            if (cardMechanics.CheckBlackJackIsTrue == true)
+            {
+                UpdatePlayAgainButtonVisibility();
+                DealCardButton.IsEnabled = false;
+                HitButton.IsEnabled = false;
+                StandButton.IsEnabled = false;
+                DoubleButton.IsEnabled = false;
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            }
+            else
+            {
+                UpdatePlayAgainButtonVisibility();
+                DealCardButton.IsEnabled = false;
+                HitButton.IsEnabled = true;
+                StandButton.IsEnabled = true;
+                DoubleButton.IsEnabled = true;
+                totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
+            }
         }
         private void DoubleButton_Click(object sender, RoutedEventArgs e)
         {
