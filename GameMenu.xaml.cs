@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
+using System.Printing;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -25,32 +26,31 @@ namespace GruppInlämning_4___BlackJack
         //Råkade göra något här. Tror det såg ut såhär innan? Det verkar funka iaf.
         public string currentUser;
         public int score = 10;
-        public List<Player> PlayerList = new List<Player>();
-        Player player = new Player(10, "jocke");
+        List<Player> PlayerList = new List<Player>();
+        List<UserBalance> userBalanceList = new List<UserBalance>();
+        //Player player1 = new Player(10, "hi");
         
 
         public GameMenu()
         {
             InitializeComponent();
-            PlayerList.Add(player);
+            //PlayerList.Add(player1);
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
-        {
-                       
-            
+        {                                  
             HighScoreScreen highScoreScreen= new HighScoreScreen();
             highScoreScreen.SetPlayerList(PlayerList);
-            highScoreScreen.SetLabel();
-            highScoreScreen.Show();
-            
-                 
+            highScoreScreen.SetListBox();
+            highScoreScreen.Show();               
         }
         private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
         {
+            AddNewPlayer();
             //Startar ny version av kortleken.
             CardDeck newCardDeck = new CardDeck();
             CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
+            newCardMechanics.SetPlayerList(PlayerList, currentUser);
             BlackJackScreen blackJackScreen = new BlackJackScreen(newCardMechanics);
 
             //blackJackScreen.SetCardMechanic(newCardMechanics);
@@ -80,6 +80,20 @@ namespace GruppInlämning_4___BlackJack
                     return;
                 }
             }
+        }
+
+        private void AddNewPlayer()
+        {
+            foreach (Player player in PlayerList)
+            {
+                if (currentUser == player.Name)
+                {
+                    return;
+                }               
+            }
+            
+            Player newPlayer = new Player(score, currentUser);
+            PlayerList.Add(newPlayer);
         }
     }
 }

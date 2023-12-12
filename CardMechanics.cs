@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Security.RightsManagement;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -25,18 +26,23 @@ namespace GruppInlämning_4___BlackJack
         public bool UserHasSplit = false;
         public bool CheckBlackJackSplitIsTrue = false;
         public bool CheckBlackJackIsTrue = false;
+        string currentUser;
 
         //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
         public int totalScore {  get; set; }
-       
-        
-        
+               
         public CardMechanics(CardDeck cardDeck)
         {
             CardList = cardDeck.CardList;
             
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
+
+        public void SetPlayerList(List<Player> PlayerList, string currentUser)
+        {
+            this.PlayerList = PlayerList;
+            this.currentUser = currentUser;
+        }
         public Cards DealCardUser()
         {
             //if (UserCards.Count == 0)
@@ -138,7 +144,7 @@ namespace GruppInlämning_4___BlackJack
             DealersTurn();
         }
 
-        //Splitta korten och spela på två händer samtidigt.
+        //Splitta korten och spela på två händer samtidigt.9
         public bool Split()
         {
             if (UserCards.Count == 2 && (UserCards[0].Value == UserCards[1].Value || 
@@ -463,6 +469,13 @@ namespace GruppInlämning_4___BlackJack
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
         {
+            foreach (Player player in PlayerList)
+            {
+                if (currentUser == player.Name)
+                {
+                    player.HighScore = totalScore;
+                }
+            }
             isGameFinished = true;
                         
         }
