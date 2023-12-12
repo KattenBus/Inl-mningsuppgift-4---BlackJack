@@ -20,9 +20,37 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class HighScoreScreen : Window
     {
+        List<Player> playerList;
+        
+
+        
+        
         public HighScoreScreen()
         {
             InitializeComponent();
+            //PopulateHighScoreList();
+            
         }
+        
+        public void SetPlayerList(List<Player> playerList)
+        {
+            this.playerList = playerList;
+        }
+
+        public void SetLabel()
+        {
+            foreach (Player player in playerList)
+            {
+                HighScoreListBox.Items.Add ( player.Name + "-" + player.HighScore);
+            }
+        }
+        //private void PopulateHighScoreList()
+        //{
+        //    PlayerList.Add(new Player(cardMechanics.totalScore, Name));
+        //    foreach (Player player in PlayerList)
+        //    {
+        //        HighScoreListBox.Items.Add($"{player.Name} - {player.HighScore}");
+        //    }
+        //}
     }
 }

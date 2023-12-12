@@ -11,6 +11,7 @@
             <ImageBrush ImageSource="/Highscore.png"/>
         </Grid.Background>
         <ListBox x:Name="HighScoreListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="285,156,285,50" Background="Black" Foreground="White"/>
+        <Label x:Name ="HighScoreLabel" Content="Label" HorizontalAlignment="Left" Margin="334,109,0,0" VerticalAlignment="Top" Width="114" FontSize="24" Foreground="#FFF7F3F3" Background="#FF1B1A1A"/>
 
     </Grid>
 </Window>

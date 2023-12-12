@@ -16,6 +16,7 @@ namespace GruppInlämning_4___BlackJack
         public List<Cards> UserCards = new List<Cards>();
         public List<Cards> DealerCards = new List<Cards>();
         public List<Cards> UserCardsSplit = new List<Cards>();
+        public List<Player> PlayerList;
         Random randomCard = new Random();
         public bool isGameFinished = false;
         public bool DoubleInitiated = false;
@@ -26,11 +27,14 @@ namespace GruppInlämning_4___BlackJack
         public bool CheckBlackJackIsTrue = false;
 
         //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
-        public int totalScore = 0;
-
+        public int totalScore {  get; set; }
+       
+        
+        
         public CardMechanics(CardDeck cardDeck)
         {
             CardList = cardDeck.CardList;
+            
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
         public Cards DealCardUser()
@@ -460,6 +464,7 @@ namespace GruppInlämning_4___BlackJack
         public void RoundEnd()
         {
             isGameFinished = true;
+                        
         }
         //Kod som ska hoppa igång när programmet startar eller man startar en ny runda.
         public void NewRound()
