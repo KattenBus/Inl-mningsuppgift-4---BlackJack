@@ -1,0 +1,23 @@
+﻿<Window x:Class="GruppInlämning_4___BlackJack.ManageAccountScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
+        mc:Ignorable="d"
+        Title="ManageAccountScreen" Height="225" Width="400">
+    <Grid Background="#FF0A3A1C">
+        <Button x:Name="withdrawButton" Content="Withdraw" HorizontalAlignment="Left" Margin="20,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.625,-0.161" Width="98" Click="withdrawButton_Click"/>
+        <Button x:Name="depositButton" Content="Deposit" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Width="98" Click="depositButton_Click"/>
+        <Button x:Name="changePasswordButton" Content="Change password" HorizontalAlignment="Left" Margin="20,152,0,0" VerticalAlignment="Top" Click="changePasswordButton_Click"/>
+
+        <StackPanel x:Name="withdrawAndDepositPanel" Margin="186,0,0,0" Background="#FF0A143A">
+            <Grid>
+                <Label x:Name="displayLabel" Content="" Margin="72,50,49,-49"/>
+                <TextBox x:Name="amountInput" TextWrapping="Wrap" Margin="72,103,49,-96"/>
+                <Button x:Name="withdrawOrDepositButton" Content="" Margin="72,145,49,-140" Click="withdrawOrDepositButton_Click"/>
+                <Label Content="Amount" Margin="13,100,147,-99"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

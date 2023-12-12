@@ -24,9 +24,11 @@ namespace GruppInlämning_4___BlackJack
     {
         //Råkade göra något här. Tror det såg ut såhär innan? Det verkar funka iaf.
         public string currentUser;
+        List<UserBalance> userBalanceList = new List<UserBalance>();
         public GameMenu()
         {
             InitializeComponent();
+            AddUserToBalanceList();
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
@@ -48,6 +50,26 @@ namespace GruppInlämning_4___BlackJack
         private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
             Hide();
+        }
+
+        private void ManageAccountButton_Click(object sender, RoutedEventArgs e)
+        {
+            ManageAccountScreen manageAccountScreen = new ManageAccountScreen();
+            manageAccountScreen.SetUserBalanceListAndUser(userBalanceList, currentUser);
+            manageAccountScreen.Show();
+        }
+
+        private void AddUserToBalanceList()
+        {
+            foreach (UserBalance userBalance in userBalanceList)
+            {
+                if (currentUser != userBalance.Username)
+                {
+                    UserBalance newUser = new UserBalance(currentUser, 0);
+                    userBalanceList.Add(newUser);
+                    return;
+                }
+            }
         }
     }
 }

@@ -204,6 +204,7 @@ namespace GruppInlämning_4___BlackJack
                 {
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
+
                 }        
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())

@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/GameMenu.png"/>
         </Grid.Background>
-        <Button x:Name="GoToHighScoreScreenButton" Content="High Score" HorizontalAlignment="Left" Margin="710,450,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="100" Width="250" Foreground="White" BorderBrush="#FFFFFEFE">
+        <Button x:Name="GoToHighScoreScreenButton" Content="High Score" HorizontalAlignment="Left" Margin="592,458,0,0" VerticalAlignment="Top" Click="GoToHighScoreScreenButton_Click" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="100" Width="250" Foreground="White" BorderBrush="#FFFFFEFE">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -18,7 +18,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="GoToBlackJackButton" Content="Black Jack" HorizontalAlignment="Left" Margin="414,450,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="#FFF3F1EF" BorderBrush="Snow">
+        <Button x:Name="GoToBlackJackButton" Content="Black Jack" HorizontalAlignment="Left" Margin="296,458,0,0" VerticalAlignment="Top" Click="GoToBlackJackButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="#FFF3F1EF" BorderBrush="Snow">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -26,7 +26,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="997,450,0,0" VerticalAlignment="Top" Click="logOutButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="White" BorderBrush="#FFFDFDFD">
+        <Button x:Name="logOutButton" Content="Log out" HorizontalAlignment="Left" Margin="1164,458,0,0" VerticalAlignment="Top" Click="logOutButton_Click" FontFamily="Franklin Gothic Heavy" Height="100" Width="250" FontSize="14" Foreground="White" BorderBrush="#FFFDFDFD">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="1"/>
@@ -35,6 +35,13 @@
             </Button.Background>
         </Button>
         <Label x:Name="welcomeLabel" Content="" Margin="448,96,378,0" VerticalAlignment="Top" Foreground="White" FontSize="30" FontFamily="Franklin Gothic Heavy" HorizontalContentAlignment="Center"/>
-
+        <Button x:Name="ManageAccountButton" Content="Manage account" HorizontalAlignment="Left" Margin="878,458,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Heavy" FontSize="14" Height="100" Width="250" Foreground="White" BorderBrush="#FFFFFEFE" Click="ManageAccountButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FFC3B7B7" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
