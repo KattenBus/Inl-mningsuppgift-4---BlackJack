@@ -24,17 +24,27 @@ namespace GruppInlämning_4___BlackJack
     {
         //Råkade göra något här. Tror det såg ut såhär innan? Det verkar funka iaf.
         public string currentUser;
-        List<UserBalance> userBalanceList = new List<UserBalance>();
+        public int score = 10;
+        public List<Player> PlayerList = new List<Player>();
+        Player player = new Player(10, "jocke");
+        
+
         public GameMenu()
         {
             InitializeComponent();
-            AddUserToBalanceList();
+            PlayerList.Add(player);
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
         {
+                       
+            
             HighScoreScreen highScoreScreen= new HighScoreScreen();
+            highScoreScreen.SetPlayerList(PlayerList);
+            highScoreScreen.SetLabel();
             highScoreScreen.Show();
+            
+                 
         }
         private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
         {
