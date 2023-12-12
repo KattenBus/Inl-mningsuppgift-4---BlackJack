@@ -5,18 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GruppInlämning_4___BlackJack"
         mc:Ignorable="d"
-        Title="ManageAccountScreen" Height="225" Width="400">
-    <Grid Background="#FF0A3A1C">
-        <Button x:Name="withdrawButton" Content="Withdraw" HorizontalAlignment="Left" Margin="20,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.625,-0.161" Width="98" Click="withdrawButton_Click"/>
-        <Button x:Name="depositButton" Content="Deposit" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Width="98" Click="depositButton_Click"/>
-        <Button x:Name="changePasswordButton" Content="Change password" HorizontalAlignment="Left" Margin="20,152,0,0" VerticalAlignment="Top" Click="changePasswordButton_Click"/>
+        Title="ManageAccountScreen" Height="220" Width="400">
+    <Grid>
+        <Button x:Name="withdrawButton" Content="Withdraw" HorizontalAlignment="Left" Margin="19,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.625,-0.161" Width="98" Click="withdrawButton_Click"/>
+        <Button x:Name="depositButton" Content="Deposit" HorizontalAlignment="Left" Margin="19,83,0,0" VerticalAlignment="Top" Width="98" Click="depositButton_Click"/>
+        <Button x:Name="changePasswordButton" Content="Change password" HorizontalAlignment="Left" Margin="19,141,0,0" VerticalAlignment="Top" Click="changePasswordButton_Click"/>
 
-        <StackPanel x:Name="withdrawAndDepositPanel" Margin="186,0,0,0" Background="#FF0A143A">
+        <StackPanel x:Name="withdrawAndDepositPanel" Margin="151,0,0,0" Background="#FF5568AF">
             <Grid>
-                <Label x:Name="displayLabel" Content="" Margin="72,50,49,-49"/>
-                <TextBox x:Name="amountInput" TextWrapping="Wrap" Margin="72,103,49,-96"/>
-                <Button x:Name="withdrawOrDepositButton" Content="" Margin="72,145,49,-140" Click="withdrawOrDepositButton_Click"/>
-                <Label Content="Amount" Margin="13,100,147,-99"/>
+                <Label x:Name="displayLabel" Content="" Margin="88,13,53,-12" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="amountInput" TextWrapping="Wrap" Margin="88,85,53,-78" RenderTransformOrigin="0.53,0.535"/>
+                <Button x:Name="withdrawOrDepositButton" Content="" Margin="88,127,53,-121" Click="withdrawOrDepositButton_Click"/>
+                <Label Content="Amount" Margin="12,82,166,-81" HorizontalContentAlignment="Center"/>
+                <Label x:Name="finishedLabel" Content="" Margin="12,44,11,-44" HorizontalContentAlignment="Center"/>
             </Grid>
         </StackPanel>
     </Grid>

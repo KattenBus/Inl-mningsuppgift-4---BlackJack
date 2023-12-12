@@ -15,12 +15,5 @@ namespace GruppInlämning_4___BlackJack
             HighScore = highScore;
             Name = name;
         }
-
-        
-        
-
-        
-        
-
     }
 }

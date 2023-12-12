@@ -23,6 +23,7 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class GameMenu : Window
     {
+        ManageAccountScreen manageAccountScreen = new ManageAccountScreen();
         //Råkade göra något här. Tror det såg ut såhär innan? Det verkar funka iaf.
         public string currentUser;
         List<Player> PlayerList = new List<Player>();
@@ -33,12 +34,13 @@ namespace GruppInlämning_4___BlackJack
         public GameMenu()
         {
             InitializeComponent();
+            manageAccountScreen.GameMenu = this;
         }
 
         private void GoToHighScoreScreenButton_Click(object sender, RoutedEventArgs e)
         {                                  
             HighScoreScreen highScoreScreen= new HighScoreScreen();
-            highScoreScreen.SetPlayerList(PlayerList);
+            highScoreScreen.SetAllLists(PlayerList, userBalanceList);
             highScoreScreen.SetListBox();
             highScoreScreen.Show();               
         }
@@ -48,7 +50,7 @@ namespace GruppInlämning_4___BlackJack
             //Startar ny version av kortleken.
             CardDeck newCardDeck = new CardDeck();
             CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
-            newCardMechanics.SetPlayerList(PlayerList, currentUser);
+            newCardMechanics.SetAllLists(PlayerList, currentUser, userBalanceList);
             BlackJackScreen blackJackScreen = new BlackJackScreen(newCardMechanics);
 
             //blackJackScreen.SetCardMechanic(newCardMechanics);
@@ -63,7 +65,6 @@ namespace GruppInlämning_4___BlackJack
         private void ManageAccountButton_Click(object sender, RoutedEventArgs e)
         {
             AddUserToBalanceList();
-            ManageAccountScreen manageAccountScreen = new ManageAccountScreen();
             manageAccountScreen.SetUserBalanceListAndUser(userBalanceList, currentUser);
             manageAccountScreen.Show();
         }
@@ -75,11 +76,11 @@ namespace GruppInlämning_4___BlackJack
                 if (currentUser == userBalance.Username)
                 {                  
                     return;
-                }
-
-                UserBalance newUser = new UserBalance(currentUser, 0);
-                userBalanceList.Add(newUser);
+                }             
             }
+
+            UserBalance newUser = new UserBalance(currentUser, 0);
+            userBalanceList.Add(newUser);
         }
 
         private void AddNewPlayer()
@@ -94,6 +95,17 @@ namespace GruppInlämning_4___BlackJack
             
             Player newPlayer = new Player(0, currentUser);
             PlayerList.Add(newPlayer);
+        }
+
+        public void DisplayBalance()
+        {
+            foreach (UserBalance user in userBalanceList)
+            {
+                if (currentUser == user.Username)
+                {
+                    balanceLabel.Content = "Balance: " + user.GetBalance();
+                }
+            }
         }
     }
 }

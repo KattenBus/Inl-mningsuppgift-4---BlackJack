@@ -21,7 +21,9 @@ namespace GruppInlämning_4___BlackJack
     public partial class HighScoreScreen : Window
     {
         List<Player> playerList;
-  
+        List<UserBalance> userBalanceList;
+
+
         public HighScoreScreen()
         {
             InitializeComponent();
@@ -29,9 +31,10 @@ namespace GruppInlämning_4___BlackJack
             
         }
         
-        public void SetPlayerList(List<Player> playerList)
+        public void SetAllLists(List<Player> playerList, List<UserBalance> userBalanceList)
         {
             this.playerList = playerList;
+            this.userBalanceList = userBalanceList;
         }
 
         public void SetListBox()

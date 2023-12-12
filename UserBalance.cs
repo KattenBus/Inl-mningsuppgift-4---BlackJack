@@ -24,7 +24,7 @@ namespace GruppInlämning_4___BlackJack
 
         public bool RemoveBalance(int withdrawAmount)
         {
-            if (Balance > withdrawAmount)
+            if (Balance >= withdrawAmount)
             {
                 Balance -= withdrawAmount;
                 return true;
@@ -32,5 +32,7 @@ namespace GruppInlämning_4___BlackJack
 
             return false;
         }
+
+        public int GetBalance() { return Balance;}
     }
 }

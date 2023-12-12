@@ -18,6 +18,7 @@ namespace GruppInlämning_4___BlackJack
         public List<Cards> DealerCards = new List<Cards>();
         public List<Cards> UserCardsSplit = new List<Cards>();
         public List<Player> PlayerList;
+        List<UserBalance> userBalanceList;
         Random randomCard = new Random();
         public bool isGameFinished = false;
         public bool DoubleInitiated = false;
@@ -38,10 +39,11 @@ namespace GruppInlämning_4___BlackJack
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
 
-        public void SetPlayerList(List<Player> PlayerList, string currentUser)
+        public void SetAllLists(List<Player> PlayerList, string currentUser, List<UserBalance> userBalanceList)
         {
             this.PlayerList = PlayerList;
             this.currentUser = currentUser;
+            this.userBalanceList = userBalanceList;
         }
         public Cards DealCardUser()
         {

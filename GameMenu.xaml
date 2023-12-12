@@ -43,5 +43,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Label x:Name="balanceLabel" Content="" Margin="1132,729,0,0" VerticalAlignment="Top" Height="41" Width="329" FontSize="30" Foreground="White" FontFamily="Franklin Gothic Heavy" HorizontalContentAlignment="Stretch"/>
     </Grid>
 </Window>

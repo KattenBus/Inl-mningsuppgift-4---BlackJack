@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,31 @@ namespace GruppInlämning_4___BlackJack
     {
         List<UserBalance> userBalanceList;
         string currentUser;
+
+        private GameMenu gameMenu;
+        public GameMenu GameMenu
+        {
+            set
+            {
+                if (gameMenu != value)
+                {
+                    gameMenu = value;
+                }
+            }
+        }
         public ManageAccountScreen()
         {
             InitializeComponent();
             withdrawAndDepositPanel.Visibility = Visibility.Hidden;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+            gameMenu.DisplayBalance();
+            withdrawAndDepositPanel.Visibility = Visibility.Hidden;
+            finishedLabel.Content = "";
         }
 
         public void SetUserBalanceListAndUser(List<UserBalance> userBalanceList, string currentUser)
@@ -38,6 +60,7 @@ namespace GruppInlämning_4___BlackJack
             withdrawAndDepositPanel.Visibility = Visibility.Visible;
             displayLabel.Content = "Withdraw";
             withdrawOrDepositButton.Content = "Withdraw";
+            finishedLabel.Content = "";
         }
 
         private void depositButton_Click(object sender, RoutedEventArgs e)
@@ -45,11 +68,12 @@ namespace GruppInlämning_4___BlackJack
             withdrawAndDepositPanel.Visibility = Visibility.Visible;
             displayLabel.Content = "Deposit";
             withdrawOrDepositButton.Content = "Deposit";
+            finishedLabel.Content = "";
         }
 
         private void changePasswordButton_Click(object sender, RoutedEventArgs e)
         {
-
+            withdrawAndDepositPanel.Visibility = Visibility.Hidden;
         }
 
         private void withdrawOrDepositButton_Click(object sender, RoutedEventArgs e)
@@ -65,12 +89,14 @@ namespace GruppInlämning_4___BlackJack
 
                         if (hasWithdrawn == true)
                         {
-                            MessageBox.Show($"You withdrew {withdrawAmount}");
+                            finishedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
+                            finishedLabel.Content = $"You have withdrawn {withdrawAmount}";
                         }
 
                         else
                         {
-                            MessageBox.Show("You are dead broke");
+                            finishedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                            finishedLabel.Content = "You dont have enough for this";
                         }
                     }
                 }
@@ -84,9 +110,13 @@ namespace GruppInlämning_4___BlackJack
                     {
                         int depositAmount = int.Parse(amountInput.Text);
                         userBalance.AddBalance(depositAmount);
+                        finishedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
+                        finishedLabel.Content = $"You deposited {depositAmount}";
                     }
                 }
             }
+
+            amountInput.Text = "";
         }
     }
 }
