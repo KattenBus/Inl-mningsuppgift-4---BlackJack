@@ -471,7 +471,7 @@ namespace GruppInlämning_4___BlackJack
         {
             foreach (Player player in PlayerList)
             {
-                if (currentUser == player.Name)
+                if (currentUser == player.Name && totalScore > player.HighScore)
                 {
                     player.HighScore = totalScore;
                 }

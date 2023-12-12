@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GruppInlämning_4___BlackJack
 {
-    public partial class UserBalance
+    public class UserBalance
     {
         public string Username { get; set; }
         int Balance { get; set; }
