@@ -42,7 +42,7 @@ namespace GruppInlämning_4___BlackJack
             HighScoreListBox.Items.Clear();
             foreach (Player player in playerList)
             {              
-                HighScoreListBox.Items.Add(player.Name + "-" + player.HighScore);
+                HighScoreListBox.Items.Add($"Name: {player.Name} | Score: {player.HighScore}");
             }
         }
         //private void PopulateHighScoreList()

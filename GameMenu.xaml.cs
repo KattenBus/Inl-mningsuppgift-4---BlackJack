@@ -52,6 +52,8 @@ namespace GruppInlämning_4___BlackJack
             CardMechanics newCardMechanics = new CardMechanics(newCardDeck);
             newCardMechanics.SetAllLists(PlayerList, currentUser, userBalanceList);
             BlackJackScreen blackJackScreen = new BlackJackScreen(newCardMechanics);
+            blackJackScreen.GameMenu = this;
+            blackJackScreen.SetAllLists(userBalanceList, currentUser);
 
             //blackJackScreen.SetCardMechanic(newCardMechanics);
             blackJackScreen.Show();

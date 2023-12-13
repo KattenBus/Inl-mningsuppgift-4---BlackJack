@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -22,11 +24,35 @@ namespace GruppInlämning_4___BlackJack
     {
         CardMechanics cardMechanics;
         public bool UserHasSplitAndStood = false;
+        List<UserBalance> userBalanceList;
+        string currentUser;
+        private GameMenu gameMenu;
+        public GameMenu GameMenu
+        {
+            set
+            {
+                if (gameMenu != value)
+                {
+                    gameMenu = value;
+                }
+            }
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+            PerformPlayAgainButtonLogic();
+            gameMenu.DisplayBalance();            
+        }
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
-            SetCardMechanic(cardMechanics);
-            
+            SetCardMechanic(cardMechanics);            
+        }
+        public void SetAllLists(List<UserBalance> userBalanceList, string currentUser)
+        {
+            this.userBalanceList = userBalanceList;
+            this.currentUser = currentUser;
         }
         public void SetCardMechanic(CardMechanics cardmechanics)
         {
@@ -58,6 +84,19 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
+            bool doesUserHaveBalanceAccount = DoesBalanceAccountExist();
+            if (doesUserHaveBalanceAccount == false)
+            {
+                MessageBox.Show("You need to start a balanceaccount by depositing!");
+                return;
+            }
+
+            bool betIsMade = BetOnClickAction();
+            if (betIsMade == false)
+            {
+                return;
+            }
+
             DealHandUser();
             DealHandDealer();
             cardMechanics.Split();
@@ -87,6 +126,12 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DoubleButton_Click(object sender, RoutedEventArgs e)
         {
+            bool betIsMade = BetOnClickAction();
+            if (betIsMade == false)
+            {
+                return;
+            }
+
             if (cardMechanics.UserHasSplit == false)
             {
                 cardMechanics.Double();
@@ -602,7 +647,7 @@ namespace GruppInlämning_4___BlackJack
             }
         }
             public void PerformStandButton_ClickLogic()
-        {
+            {
             while (cardMechanics.CalculateHandValueDealer() <= 16)
             {
                 if (cardMechanics.DealerCards.Count < 2)
@@ -726,9 +771,13 @@ namespace GruppInlämning_4___BlackJack
             CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
             UpdatePlayAgainButtonVisibility();
             totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
-
-        }
+            }
         private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
+        {
+            PerformPlayAgainButtonLogic();
+        }
+
+        private void PerformPlayAgainButtonLogic()
         {
             cardMechanics.NewRound();
 
@@ -791,6 +840,12 @@ namespace GruppInlämning_4___BlackJack
 
         private void SplitButton_Click(object sender, RoutedEventArgs e)
         {
+            bool betIsMade = BetOnClickAction();
+            if (betIsMade == false)
+            {
+                return;
+            }
+
             cardMechanics.UserHasSplit = true;
             CardTotalUserSplitLabel.Visibility = Visibility.Visible;
 
@@ -843,6 +898,40 @@ namespace GruppInlämning_4___BlackJack
 
             SplitButton.IsEnabled = false;
         }
-    }
 
+        private bool BetOnClickAction()
+        {
+            foreach (UserBalance userBalance in userBalanceList)
+            {
+                if (currentUser == userBalance.Username)
+                {
+                    bool betIsMade = userBalance.RemoveBalance(100);
+                    
+                    if (betIsMade == true)
+                    {
+                        return true;
+                    }
+
+                    if (betIsMade == false)
+                    {
+                        MessageBox.Show("You don't have enough to bet");
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+        private bool DoesBalanceAccountExist()
+        {
+            foreach (UserBalance userBalance in userBalanceList)
+            {
+                if (currentUser == userBalance.Username)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
 }

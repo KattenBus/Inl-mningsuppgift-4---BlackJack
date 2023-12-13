@@ -30,12 +30,12 @@ namespace GruppInlämning_4___BlackJack
         string currentUser;
 
         //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
-        public int totalScore {  get; set; }
+        public int totalScore { get; set; }
+        int wonOrLost;
                
         public CardMechanics(CardDeck cardDeck)
         {
-            CardList = cardDeck.CardList;
-            
+            CardList = cardDeck.CardList;            
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
 
@@ -171,12 +171,14 @@ namespace GruppInlämning_4___BlackJack
                 {
                     MessageBox.Show("Hurray! You got BlackJack");
                     totalScore += 2;
+                    wonOrLost += 350;
                     CheckBlackJackIsTrue = true;
                 }
 
             }
             else if (CalculateHandValueUser() == 21 && UserCards.Count == 2 && UserHasSplit == false)
             {
+                wonOrLost += 350;
                 totalScore += 2;
                 CheckBlackJackIsTrue = true;
                 RoundEnd();
@@ -191,6 +193,7 @@ namespace GruppInlämning_4___BlackJack
                 if (CalculateHandValueUserSplit() == 21 && UserCards.Count == 2)
                 {
                     MessageBox.Show("Hurray! You got BlackJack");
+                    wonOrLost += 350;
                     totalScore += 2;
                     CheckBlackJackSplitIsTrue = true; 
                 }
@@ -290,11 +293,13 @@ namespace GruppInlämning_4___BlackJack
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
+                    wonOrLost += 400;
                     totalScore += 2;
                     MessageBox.Show("The dealer busted! YOU WIN!");
                 }
                 else if (CalculateHandValueUser() > 0)
                 {
+                    wonOrLost += 200;
                     totalScore += 1;
                     MessageBox.Show("The dealer busted! YOU WIN!");
                 }
@@ -306,11 +311,13 @@ namespace GruppInlämning_4___BlackJack
                     }
                     if (CalculateHandValueUserSplit() > 0 && DoubleInitiated == true)
                     {
+                        wonOrLost += 400;
                         totalScore += 2;
                         MessageBox.Show("The dealer busted! YOU WIN YOUR SECOND HAND!");
                     }
                     else if (CalculateHandValueUserSplit() > 0)
                     {
+                        wonOrLost += 200;
                         totalScore += 1;
                         MessageBox.Show("The dealer busted! YOU WIN YOUR SECOND HAND!");
                     }
@@ -324,11 +331,13 @@ namespace GruppInlämning_4___BlackJack
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
+                    wonOrLost += 400;
                     totalScore += 2;
                     MessageBox.Show("You Managed to WIN!");
                 }
                 else if (CalculateHandValueUser() > 0)
                 {
+                    wonOrLost += 200;
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
                 }
@@ -351,11 +360,13 @@ namespace GruppInlämning_4___BlackJack
                         }
                         if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
                         {
+                            wonOrLost += 400;
                             totalScore += 2;
                             MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                         }
                         else if (CalculateHandValueUserSplit() > 0)
                         {
+                            wonOrLost += 200;
                             totalScore += 1;
                             MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                         }
@@ -380,10 +391,12 @@ namespace GruppInlämning_4___BlackJack
             {
                 if (DoubleInitiated == true)
                 {
+                    wonOrLost += 200;
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
                 else
                 {
+                    wonOrLost += 100;
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
                 //if (UserHasSplit == true)
@@ -397,10 +410,12 @@ namespace GruppInlämning_4___BlackJack
                 {
                     if (DoubleInitiated == true)
                     {
+                        wonOrLost += 200;
                         MessageBox.Show("Woah! Even Steven on your second hand! Let's go again!");
                     }
                     else
                     {
+                        wonOrLost -= 100;
                         MessageBox.Show("Woah! Even Steven on you second hand! Let's go again!");
                     }
                 }
@@ -412,11 +427,13 @@ namespace GruppInlämning_4___BlackJack
                     }
                     if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
                     {
+                        wonOrLost += 400;
                         totalScore += 2;
                         MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                     }
                     else if (CalculateHandValueUserSplit() > 0)
                     {
+                        wonOrLost += 200;
                         totalScore += 1;
                         MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                     }
@@ -471,17 +488,36 @@ namespace GruppInlämning_4___BlackJack
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
         {
+            ChangeUserTotalScore();
+            AddBalaceIfWon();
+            wonOrLost = 0;
+            isGameFinished = true;
+                        
+        }
+        //Kod som ska hoppa igång när programmet startar eller man startar en ny runda.
+
+        private void AddBalaceIfWon()
+        {
+            foreach (UserBalance userBalance in userBalanceList)
+            {
+                if (currentUser == userBalance.Username)
+                {
+                    userBalance.AddBalance(wonOrLost);
+                    return;
+                }
+            }
+        }
+        private void ChangeUserTotalScore()
+        {
             foreach (Player player in PlayerList)
             {
                 if (currentUser == player.Name && totalScore > player.HighScore)
                 {
                     player.HighScore = totalScore;
+                    return;
                 }
             }
-            isGameFinished = true;
-                        
         }
-        //Kod som ska hoppa igång när programmet startar eller man startar en ny runda.
         public void NewRound()
         {
             ResetCardDeck();
