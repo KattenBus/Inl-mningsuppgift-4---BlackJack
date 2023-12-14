@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Security.RightsManagement;
+using System.Windows.Media.Animation;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -28,6 +29,7 @@ namespace GruppInlämning_4___BlackJack
         public bool CheckBlackJackSplitIsTrue = false;
         public bool CheckBlackJackIsTrue = false;
         string currentUser;
+        int totalBet;
 
         //Här sparas vinsterna, den ska med till HIGHSCORESCREEN!
         public int totalScore { get; set; }
@@ -44,6 +46,11 @@ namespace GruppInlämning_4___BlackJack
             this.highscoreList = highscoreList;
             this.currentUser = currentUser;
             this.userBalanceList = userBalanceList;
+        }
+
+        public void SetTotalBetAmount(int totalBet)
+        {
+            this.totalBet = totalBet;
         }
         public Cards DealCardUser()
         {
@@ -171,14 +178,14 @@ namespace GruppInlämning_4___BlackJack
                 {
                     MessageBox.Show("Hurray! You got BlackJack");
                     totalScore += 2;
-                    wonOrLost += 350;
+                    wonOrLost += totalBet * 3;
                     CheckBlackJackIsTrue = true;
                 }
 
             }
             else if (CalculateHandValueUser() == 21 && UserCards.Count == 2 && UserHasSplit == false)
             {
-                wonOrLost += 350;
+                wonOrLost += totalBet * 3;
                 totalScore += 2;
                 CheckBlackJackIsTrue = true;
                 RoundEnd();
@@ -193,7 +200,7 @@ namespace GruppInlämning_4___BlackJack
                 if (CalculateHandValueUserSplit() == 21 && UserCards.Count == 2)
                 {
                     MessageBox.Show("Hurray! You got BlackJack");
-                    wonOrLost += 350;
+                    wonOrLost += totalBet * 3;
                     totalScore += 2;
                     CheckBlackJackSplitIsTrue = true; 
                 }
@@ -293,13 +300,13 @@ namespace GruppInlämning_4___BlackJack
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
-                    wonOrLost += 400;
+                    wonOrLost += totalBet * 4;
                     totalScore += 2;
                     MessageBox.Show("The dealer busted! YOU WIN!");
                 }
                 else if (CalculateHandValueUser() > 0)
                 {
-                    wonOrLost += 200;
+                    wonOrLost += totalBet * 2;
                     totalScore += 1;
                     MessageBox.Show("The dealer busted! YOU WIN!");
                 }
@@ -311,13 +318,13 @@ namespace GruppInlämning_4___BlackJack
                     }
                     if (CalculateHandValueUserSplit() > 0 && DoubleInitiated == true)
                     {
-                        wonOrLost += 400;
+                        wonOrLost += totalBet * 4;
                         totalScore += 2;
                         MessageBox.Show("The dealer busted! YOU WIN YOUR SECOND HAND!");
                     }
                     else if (CalculateHandValueUserSplit() > 0)
                     {
-                        wonOrLost += 200;
+                        wonOrLost += totalBet * 2;
                         totalScore += 1;
                         MessageBox.Show("The dealer busted! YOU WIN YOUR SECOND HAND!");
                     }
@@ -331,13 +338,13 @@ namespace GruppInlämning_4___BlackJack
                 }
                 if (CalculateHandValueUser() > 0 && DoubleInitiated == true)
                 {
-                    wonOrLost += 400;
+                    wonOrLost += totalBet * 4;
                     totalScore += 2;
                     MessageBox.Show("You Managed to WIN!");
                 }
                 else if (CalculateHandValueUser() > 0)
                 {
-                    wonOrLost += 200;
+                    wonOrLost += totalBet * 2;
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
                 }
@@ -360,13 +367,13 @@ namespace GruppInlämning_4___BlackJack
                         }
                         if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
                         {
-                            wonOrLost += 400;
+                            wonOrLost += totalBet * 4;
                             totalScore += 2;
                             MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                         }
                         else if (CalculateHandValueUserSplit() > 0)
                         {
-                            wonOrLost += 200;
+                            wonOrLost += totalBet * 2;
                             totalScore += 1;
                             MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                         }
@@ -391,12 +398,12 @@ namespace GruppInlämning_4___BlackJack
             {
                 if (DoubleInitiated == true)
                 {
-                    wonOrLost += 200;
+                    wonOrLost += totalBet * 2;
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
                 else
                 {
-                    wonOrLost += 100;
+                    wonOrLost += totalBet;
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
                 //if (UserHasSplit == true)
@@ -410,12 +417,12 @@ namespace GruppInlämning_4___BlackJack
                 {
                     if (DoubleInitiated == true)
                     {
-                        wonOrLost += 200;
+                        wonOrLost += totalBet * 2;
                         MessageBox.Show("Woah! Even Steven on your second hand! Let's go again!");
                     }
                     else
                     {
-                        wonOrLost -= 100;
+                        wonOrLost -= totalBet;
                         MessageBox.Show("Woah! Even Steven on you second hand! Let's go again!");
                     }
                 }
@@ -427,13 +434,13 @@ namespace GruppInlämning_4___BlackJack
                     }
                     if (CalculateHandValueUserSplit() > 0 && DoubleInitiatedSplit == true)
                     {
-                        wonOrLost += 400;
+                        wonOrLost += totalBet * 4;
                         totalScore += 2;
                         MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                     }
                     else if (CalculateHandValueUserSplit() > 0)
                     {
-                        wonOrLost += 200;
+                        wonOrLost += totalBet * 2;
                         totalScore += 1;
                         MessageBox.Show("You Managed to WIN YOUR SECOND HAND!");
                     }

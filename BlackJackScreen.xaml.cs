@@ -26,8 +26,10 @@ namespace GruppInlämning_4___BlackJack
         public bool UserHasSplitAndStood = false;
         List<UserBalance> userBalanceList;
         List<Player> highscoreList;
-        string currentUser;
         private GameMenu gameMenu;
+        string currentUser;
+        int totalBet;
+        
         public GameMenu GameMenu
         {
             set
@@ -88,6 +90,11 @@ namespace GruppInlämning_4___BlackJack
         }
         private void DealCardButton_Click(object sender, RoutedEventArgs e)
         {
+            if (totalBet == 0)
+            {
+                MessageBox.Show("Please place a bet.");
+                return;
+            }
             bool doesUserHaveBalanceAccount = DoesBalanceAccountExist();
             if (doesUserHaveBalanceAccount == false)
             {
@@ -100,6 +107,11 @@ namespace GruppInlämning_4___BlackJack
             {
                 return;
             }
+
+            Bet100.IsEnabled = false;
+            Bet200.IsEnabled = false;
+            Bet500.IsEnabled = false;
+            ResetBet.IsEnabled = false;
 
             DealHandUser();
             DealHandDealer();
@@ -824,6 +836,10 @@ namespace GruppInlämning_4___BlackJack
             cardMechanics.CheckBlackJackSplitIsTrue = false;
             cardMechanics.CheckBlackJackIsTrue = false;
             CardTotalUserSplitLabel.Visibility = Visibility.Hidden;
+            Bet100.IsEnabled = true;
+            Bet200.IsEnabled = true;
+            Bet500.IsEnabled = true;
+            ResetBet.IsEnabled = true;
             UpdatePlayAgainButtonVisibility();
         }
         private void UpdatePlayAgainButtonVisibility()
@@ -831,6 +847,9 @@ namespace GruppInlämning_4___BlackJack
             if (cardMechanics.isGameFinished == true)
             {
                 PlayAgainButton.Visibility = Visibility.Visible;
+                totalBet = 0;
+                totalBetLabel.Content = "Total bet:";
+                
                 HitButton.IsEnabled = false;
                 StandButton.IsEnabled = false;
                 DoubleButton.IsEnabled = false;
@@ -909,10 +928,11 @@ namespace GruppInlämning_4___BlackJack
             {
                 if (currentUser == userBalance.Username)
                 {
-                    bool betIsMade = userBalance.RemoveBalance(100);
+                    bool betIsMade = userBalance.RemoveBalance(totalBet);
                     
                     if (betIsMade == true)
                     {
+                        cardMechanics.SetTotalBetAmount(totalBet);
                         return true;
                     }
 
@@ -970,6 +990,30 @@ namespace GruppInlämning_4___BlackJack
                     sw.WriteLine(player.GetCSV());
                 }
             }
+        }
+
+        private void ResetBet_Click(object sender, RoutedEventArgs e)
+        {
+            totalBet = 0;
+            totalBetLabel.Content = $"Total bet: {totalBet}";
+        }
+
+        private void Bet100_Click(object sender, RoutedEventArgs e)
+        {
+            totalBet += 100;
+            totalBetLabel.Content = $"Total bet: {totalBet}";
+        }
+
+        private void Bet200_Click(object sender, RoutedEventArgs e)
+        {
+            totalBet += 200;
+            totalBetLabel.Content = $"Total bet: {totalBet}";
+        }
+
+        private void Bet500_Click(object sender, RoutedEventArgs e)
+        {
+            totalBet += 500;
+            totalBetLabel.Content = $"Total bet: {totalBet}";
         }
     }
 }

@@ -123,6 +123,7 @@ namespace GruppInlämning_4___BlackJack
                 if (currentUser == user.Username)
                 {
                     balanceLabel.Content = "Balance: " + user.GetBalance();
+                    return;
                 }
             }
         }
