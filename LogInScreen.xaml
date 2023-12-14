@@ -12,24 +12,10 @@
         </Grid.Background>
         <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Margin="721,489,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
         <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Margin="721,531,0,0" VerticalAlignment="Top" Width="183"/>
-        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="759,558,0,0" VerticalAlignment="Top" Click="loginButton_Click" Width="93" FontFamily="Showcard Gothic" Height="32" Foreground="Snow" BorderBrush="White">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.747"/>
-                    <GradientStop Color="#FFFB0000"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <Button x:Name="loginButton" Content="Login" HorizontalAlignment="Left" Margin="721,558,0,0" VerticalAlignment="Top" Click="loginButton_Click" Width="183" FontFamily="Showcard Gothic" Height="32" Foreground="#FFFF6E09" BorderBrush="White" Background="Black" FontSize="24"/>
         <Label x:Name="failLabel" Content="" HorizontalAlignment="Left" Margin="706,361,0,0" VerticalAlignment="Top" Foreground="Red"/>
-        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="759,610,0,0" VerticalAlignment="Top" Width="93" Click="registerButton_Click" RenderTransformOrigin="0.629,1.39" FontFamily="Showcard Gothic" Height="35" BorderBrush="#FFFFFEFE" Foreground="White">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.735"/>
-                    <GradientStop Color="Red"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="633,484,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.525,1.693" FontSize="14" Foreground="#FFF9F3F3" FontFamily="Showcard Gothic"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="630,526,0,0" VerticalAlignment="Top" Foreground="#FFFDFCFC" FontSize="14" FontFamily="Showcard Gothic"/>
+        <Button x:Name="registerButton" Content="Register" HorizontalAlignment="Left" Margin="721,610,0,0" VerticalAlignment="Top" Width="183" Click="registerButton_Click" RenderTransformOrigin="0.629,1.39" FontFamily="Showcard Gothic" Height="35" BorderBrush="#FFFFFEFE" Foreground="#FFFF6E09" FontSize="24" Background="Black"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="578,478,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="0.525,1.693" FontSize="24" Foreground="#FFFF6E09" FontFamily="Showcard Gothic"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="570,523,0,0" VerticalAlignment="Top" Foreground="#FFFF6E09" FontSize="24" FontFamily="Showcard Gothic" Width="146"/>
     </Grid>
 </Window>
