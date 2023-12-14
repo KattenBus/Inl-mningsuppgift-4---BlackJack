@@ -20,7 +20,7 @@ namespace GruppInlämning_4___BlackJack
     /// </summary>
     public partial class HighScoreScreen : Window
     {
-        List<Player> playerList;
+        List<Player> highscoreList;
         List<UserBalance> userBalanceList;
 
 
@@ -28,19 +28,18 @@ namespace GruppInlämning_4___BlackJack
         {
             InitializeComponent();
             //PopulateHighScoreList();
-            
         }
         
-        public void SetAllLists(List<Player> playerList, List<UserBalance> userBalanceList)
+        public void SetAllLists(List<Player> highscoreList, List<UserBalance> userBalanceList)
         {
-            this.playerList = playerList;
+            this.highscoreList = highscoreList;
             this.userBalanceList = userBalanceList;
         }
 
         public void SetListBox()
         {
             HighScoreListBox.Items.Clear();
-            foreach (Player player in playerList)
+            foreach (Player player in highscoreList)
             {              
                 HighScoreListBox.Items.Add($"Name: {player.Name} | Score: {player.HighScore}");
             }

@@ -25,6 +25,7 @@ namespace GruppInlämning_4___BlackJack
         CardMechanics cardMechanics;
         public bool UserHasSplitAndStood = false;
         List<UserBalance> userBalanceList;
+        List<Player> highscoreList;
         string currentUser;
         private GameMenu gameMenu;
         public GameMenu GameMenu
@@ -42,6 +43,8 @@ namespace GruppInlämning_4___BlackJack
             Hide();
             e.Cancel = true;
             PerformPlayAgainButtonLogic();
+            StoreBalanceAccount();
+            StoreHighscoreList();
             gameMenu.DisplayBalance();            
         }
         public BlackJackScreen(CardMechanics cardMechanics)
@@ -49,10 +52,11 @@ namespace GruppInlämning_4___BlackJack
             InitializeComponent();
             SetCardMechanic(cardMechanics);            
         }
-        public void SetAllLists(List<UserBalance> userBalanceList, string currentUser)
+        public void SetAllLists(List<UserBalance> userBalanceList, string currentUser, List<Player> highscoreList)
         {
             this.userBalanceList = userBalanceList;
             this.currentUser = currentUser;
+            this.highscoreList = highscoreList;
         }
         public void SetCardMechanic(CardMechanics cardmechanics)
         {
@@ -932,6 +936,40 @@ namespace GruppInlämning_4___BlackJack
             }
 
             return false;
+        }
+
+        string folderPath = "csvFolder";
+        string path = "csvFolder/balanceAccounts.csv";
+        string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
+        public void StoreBalanceAccount()
+        {
+            Directory.CreateDirectory(folderPath);
+            File.Delete(path);
+
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine("Username,Balance");
+                foreach (UserBalance userBalance in userBalanceList)
+                {
+                    sw.WriteLine(userBalance.GetCSV());
+                }
+            }
+        }
+
+        string path2 = "csvFolder/highscoreList.csv";
+        public void StoreHighscoreList()
+        {
+            Directory.CreateDirectory(folderPath);
+            File.Delete(path2);
+
+            using (StreamWriter sw = new StreamWriter(path2))
+            {
+                sw.WriteLine("Username,Highscore");
+                foreach (Player player in highscoreList)
+                {
+                    sw.WriteLine(player.GetCSV());
+                }
+            }
         }
     }
 }

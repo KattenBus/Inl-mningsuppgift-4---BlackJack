@@ -17,7 +17,7 @@ namespace GruppInlämning_4___BlackJack
         public List<Cards> UserCards = new List<Cards>();
         public List<Cards> DealerCards = new List<Cards>();
         public List<Cards> UserCardsSplit = new List<Cards>();
-        public List<Player> PlayerList;
+        public List<Player> highscoreList;
         List<UserBalance> userBalanceList;
         Random randomCard = new Random();
         public bool isGameFinished = false;
@@ -39,9 +39,9 @@ namespace GruppInlämning_4___BlackJack
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till UserCards listan.
 
-        public void SetAllLists(List<Player> PlayerList, string currentUser, List<UserBalance> userBalanceList)
+        public void SetAllLists(List<Player> highscoreList, string currentUser, List<UserBalance> userBalanceList)
         {
-            this.PlayerList = PlayerList;
+            this.highscoreList = highscoreList;
             this.currentUser = currentUser;
             this.userBalanceList = userBalanceList;
         }
@@ -509,7 +509,7 @@ namespace GruppInlämning_4___BlackJack
         }
         private void ChangeUserTotalScore()
         {
-            foreach (Player player in PlayerList)
+            foreach (Player player in highscoreList)
             {
                 if (currentUser == player.Name && totalScore > player.HighScore)
                 {

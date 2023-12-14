@@ -42,6 +42,7 @@ namespace GruppInlämning_4___BlackJack
                     GameMenu gameMenu = new GameMenu();
                     gameMenu.welcomeLabel.Content = $"Welcome {username}!";
                     gameMenu.currentUser = username;
+                    gameMenu.SetAccountList(accountList);
                     gameMenu.Show();                 
                     return;
                 }

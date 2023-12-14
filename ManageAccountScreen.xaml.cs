@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +24,7 @@ namespace GruppInlämning_4___BlackJack
     {
         List<UserBalance> userBalanceList;
         string currentUser;
+        List<Accounts> accountList;
 
         private GameMenu gameMenu;
         public GameMenu GameMenu
@@ -38,6 +41,7 @@ namespace GruppInlämning_4___BlackJack
         {
             InitializeComponent();
             withdrawAndDepositPanel.Visibility = Visibility.Hidden;
+            changePasswordPanel.Visibility = Visibility.Hidden;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -46,17 +50,20 @@ namespace GruppInlämning_4___BlackJack
             e.Cancel = true;
             gameMenu.DisplayBalance();
             withdrawAndDepositPanel.Visibility = Visibility.Hidden;
+            changePasswordPanel.Visibility = Visibility.Hidden;
             finishedLabel.Content = "";
         }
 
-        public void SetUserBalanceListAndUser(List<UserBalance> userBalanceList, string currentUser)
+        public void SetAllLists(List<UserBalance> userBalanceList, string currentUser, List<Accounts> accountList)
         {
             this.userBalanceList = userBalanceList;
             this.currentUser = currentUser;
+            this.accountList = accountList;
         }
 
         private void withdrawButton_Click(object sender, RoutedEventArgs e)
         {
+            changePasswordPanel.Visibility = Visibility.Hidden;
             withdrawAndDepositPanel.Visibility = Visibility.Visible;
             displayLabel.Content = "Withdraw";
             withdrawOrDepositButton.Content = "Withdraw";
@@ -65,6 +72,7 @@ namespace GruppInlämning_4___BlackJack
 
         private void depositButton_Click(object sender, RoutedEventArgs e)
         {
+            changePasswordPanel.Visibility = Visibility.Hidden;
             withdrawAndDepositPanel.Visibility = Visibility.Visible;
             displayLabel.Content = "Deposit";
             withdrawOrDepositButton.Content = "Deposit";
@@ -74,6 +82,7 @@ namespace GruppInlämning_4___BlackJack
         private void changePasswordButton_Click(object sender, RoutedEventArgs e)
         {
             withdrawAndDepositPanel.Visibility = Visibility.Hidden;
+            changePasswordPanel.Visibility = Visibility.Visible;
         }
 
         private void withdrawOrDepositButton_Click(object sender, RoutedEventArgs e)
@@ -89,6 +98,7 @@ namespace GruppInlämning_4___BlackJack
 
                         if (hasWithdrawn == true)
                         {
+                            StoreBalanceAccount();
                             finishedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
                             finishedLabel.Content = $"You have withdrawn {withdrawAmount}";
                         }
@@ -110,6 +120,7 @@ namespace GruppInlämning_4___BlackJack
                     {
                         int depositAmount = int.Parse(amountInput.Text);
                         userBalance.AddBalance(depositAmount);
+                        StoreBalanceAccount();
                         finishedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
                         finishedLabel.Content = $"You deposited {depositAmount}";
                     }
@@ -117,6 +128,86 @@ namespace GruppInlämning_4___BlackJack
             }
 
             amountInput.Text = "";
+        }
+
+        private void performChangePasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+            string oldPasswordInput = oldPassword.Password;
+            string newPasswordInput = newPassword.Password;
+            string confirmPasswordInput = confirmPassword.Password;
+
+            if (newPasswordInput == confirmPasswordInput)
+            {
+                foreach (Accounts accounts in accountList)
+                {
+                    if (accounts.Password == oldPasswordInput && accounts.Username == currentUser)
+                    {
+                        accounts.Password = newPasswordInput;
+                        StoreUpdatedAccount();
+                        finishedLabel2.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
+                        finishedLabel2.Content = "You have sucessfully changed your password";    
+                        ResetPasswordBox();
+                        return;
+                    }
+                }
+                finishedLabel2.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                finishedLabel2.Content = "Your current password is incorrect";
+            }
+
+            else if (newPasswordInput == "" && confirmPasswordInput == "")
+            {
+                finishedLabel2.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                finishedLabel2.Content = "You did not enter your new password or confirm your new password";
+            }
+
+            else
+            {
+                finishedLabel2.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+                finishedLabel2.Content = "The passwords did not match";
+            }
+
+            ResetPasswordBox();
+        }
+
+        private void ResetPasswordBox()
+        {
+            oldPassword.Password = "";
+            newPassword.Password = "";
+            confirmPassword.Password = "";
+        }
+
+        string folderPath = "csvFolder";
+        string path = "csvFolder/accounts.csv";
+        string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
+        private void StoreUpdatedAccount()
+        {
+            Directory.CreateDirectory(folderPath);
+            File.Delete(path);
+
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine("Username,Password");
+                foreach (Accounts accounts in accountList)
+                {
+                    sw.WriteLine(accounts.GetCSV());
+                }
+            }
+        }
+
+        string path2 = "csvFolder/balanceAccounts.csv";
+        public void StoreBalanceAccount()
+        {
+            Directory.CreateDirectory(folderPath);
+            File.Delete(path2);
+
+            using (StreamWriter sw = new StreamWriter(path2))
+            {
+                sw.WriteLine("Username,Balance");
+                foreach (UserBalance userBalance in userBalanceList)
+                {
+                    sw.WriteLine(userBalance.GetCSV());
+                }
+            }
         }
     }
 }

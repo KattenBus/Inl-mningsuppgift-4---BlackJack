@@ -33,6 +33,11 @@ namespace GruppInlämning_4___BlackJack
             return false;
         }
 
+        public string GetCSV()
+        {
+            return Username + "," + Balance;
+        }
+
         public int GetBalance() { return Balance;}
     }
 }
