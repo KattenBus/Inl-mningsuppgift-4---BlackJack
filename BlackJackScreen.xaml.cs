@@ -33,9 +33,7 @@ namespace GruppInlämning_4___BlackJack
         string currentUser;
         int totalBet;
         private SoundPlayer player;
-        
-        
-        
+             
         public GameMenu GameMenu
         {
             set
@@ -1028,10 +1026,5 @@ namespace GruppInlämning_4___BlackJack
             totalBet += 500;
             totalBetLabel.Content = $"Total bet: {totalBet}";
         }
-
-        
-
-
-
     }
 }
