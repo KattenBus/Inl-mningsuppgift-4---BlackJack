@@ -41,6 +41,10 @@
         <Image x:Name="SixthCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="902,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SeventhCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="817,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Label x:Name="CardTotalUserSplitLabel" Content="CardTotalUserSplit" HorizontalAlignment="Left" Margin="1242,188,0,0" VerticalAlignment="Top" FontSize="36" Visibility="Hidden"/>
-        <Label x:Name="balanceLabel" FontSize="26" Content="Label" HorizontalAlignment="Left" Margin="259,735,0,0" VerticalAlignment="Top" Width="130" Height="54"/>
+        <Button x:Name="Bet500" Content="500" HorizontalAlignment="Left" Margin="502,487,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="24" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="Bet500_Click"/>
+        <Button x:Name="Bet200" Content="200" HorizontalAlignment="Left" Margin="582,442,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="24" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="Bet200_Click"/>
+        <Button x:Name="Bet100" Content="100" HorizontalAlignment="Left" Margin="502,442,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="24" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="Bet100_Click"/>
+        <Button x:Name="ResetBet" Content="Reset" HorizontalAlignment="Left" Margin="582,487,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="22" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="ResetBet_Click"/>
+        <Label x:Name="totalBetLabel" Content="Total bet:" Margin="53,296,0,0" VerticalAlignment="Top" Height="46" Width="226" FontSize="25" FontFamily="Showcard Gothic" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
