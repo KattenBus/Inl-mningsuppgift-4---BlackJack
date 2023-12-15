@@ -54,6 +54,7 @@ namespace GruppInlämning_4___BlackJack
             StoreBalanceAccount();
             StoreHighscoreList();
             gameMenu.DisplayBalance();
+            
         }
         public BlackJackScreen(CardMechanics cardMechanics)
         {
@@ -253,14 +254,7 @@ namespace GruppInlämning_4___BlackJack
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
-            //if (cardMechanics.isGameFinished == true)
-            //{
-
-            //}
-            //else
-            //{
-            //    PerformStandButton_ClickLogic();
-            //}
+            
 
         }
         private void HitButton_Click(object sender, RoutedEventArgs e)
@@ -694,7 +688,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
 
                 }
@@ -714,7 +707,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
                 }
                 else if (FourthCardImageDealer.Source == null)
@@ -733,7 +725,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
                 }
                 else if (FifthCardImageDealer.Source == null)
@@ -752,7 +743,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
                 }
                 else if (SixthCardImageDealer.Source == null)
@@ -771,7 +761,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
                 }
                 else if (SeventhCardImageDealer.Source == null)
@@ -790,7 +779,6 @@ namespace GruppInlämning_4___BlackJack
                         aceCard.Value = 1;
                     }
                     CardTotalDealerLabel.Content = cardMechanics.CalculateHandValueDealer();
-                    //cardMechanics.CheckBustDealer();
                     UpdatePlayAgainButtonVisibility();
                 }
             }
@@ -803,6 +791,7 @@ namespace GruppInlämning_4___BlackJack
         private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
         {
             PerformPlayAgainButtonLogic();
+            CurrentBalance();
         }
 
         private void PerformPlayAgainButtonLogic()
@@ -973,7 +962,7 @@ namespace GruppInlämning_4___BlackJack
 
         string folderPath = "csvFolder";
         string path = "csvFolder/balanceAccounts.csv";
-        string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
+        
         public void StoreBalanceAccount()
         {
             Directory.CreateDirectory(folderPath);
@@ -1015,6 +1004,7 @@ namespace GruppInlämning_4___BlackJack
         {
             totalBet += 100;
             totalBetLabel.Content = $"Total bet: {totalBet}";
+            
         }
 
         private void Bet200_Click(object sender, RoutedEventArgs e)
@@ -1030,6 +1020,20 @@ namespace GruppInlämning_4___BlackJack
         }
 
         
+
+        public void CurrentBalance()
+        {
+            foreach (UserBalance user in userBalanceList)
+            {
+                if (currentUser == user.Username)
+                {
+                    int userBalance = user.GetBalance();                                        
+                    balanceLabel.Content = $"Balance: {userBalance}";
+                    return;
+                }
+            }
+                        
+        }
 
 
 

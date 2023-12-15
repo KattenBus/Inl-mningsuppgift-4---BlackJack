@@ -54,24 +54,7 @@ namespace GruppInlämning_4___BlackJack
         }
         public Cards DealCardUser()
         {
-            //if (UserCards.Count == 0)
-            //{
-            //    int chooseRandomCard = randomCard.Next(0, CardList.Count);
-            //    Cards dealtCardUser = CardList[chooseRandomCard];
-
-            //    CardList.RemoveAt(chooseRandomCard);
-            //    UserCards.Add(dealtCardUser);
-
-            //    chooseRandomCard = randomCard.Next(0, CardList.Count);
-            //    dealtCardUser = CardList[chooseRandomCard];
-
-            //    CardList.RemoveAt(chooseRandomCard);
-            //    UserCards.Add(dealtCardUser);
-
-            //    return dealtCardUser;
-            //}
-            //else 
-            //{
+            
             int chooseRandomCard = randomCard.Next(0, CardList.Count);
             Cards dealtCardUser = CardList[chooseRandomCard];
 
@@ -79,7 +62,7 @@ namespace GruppInlämning_4___BlackJack
             UserCards.Add(dealtCardUser);
 
             return dealtCardUser;
-            //}
+            
         }
         public Cards DealCardUserSplit()
         {
@@ -90,7 +73,7 @@ namespace GruppInlämning_4___BlackJack
             UserCardsSplit.Add(dealtCardUser);
 
             return dealtCardUser;
-            //}
+            
         }
         //Funktion som väljer ett slumpat kort från CardList och flyttar kortet till DealerCards listan.
         public Cards DealCardDealer()
@@ -263,17 +246,7 @@ namespace GruppInlämning_4___BlackJack
                 }
             }
         }
-        /*public bool CheckBustDealer()
-        {
-            if (CalculateHandValueUser() >= 22)
-            {
-                RoundEnd();
-                MessageBox.Show("The dealer busted! YOU WIN!");
-            }
-            return true;
-        }*/
-
-        //Man får bara dra ett kort till, men om man vinner dubblas poängen.
+        
         public bool Double()
         {
             DoubleInitiated = true;
@@ -348,10 +321,7 @@ namespace GruppInlämning_4___BlackJack
                     totalScore += 1;
                     MessageBox.Show("You Managed to WIN!");
                 }
-                //if (UserHasSplit == true)
-                //{
-
-                //}            
+                
             }
             else if (CalculateHandValueDealer() > CalculateHandValueUser())
             {
@@ -389,10 +359,7 @@ namespace GruppInlämning_4___BlackJack
                     totalScore -= 1;
                     MessageBox.Show("The dealer won by a smidge!");
                 }
-                //if (UserHasSplit == true)
-                //{
-
-                //}
+                
             }
             else if (CalculateHandValueDealer() == CalculateHandValueUser())
             {
@@ -406,10 +373,7 @@ namespace GruppInlämning_4___BlackJack
                     wonOrLost += totalBet;
                     MessageBox.Show("Woah! Even Steven! Let's go again!");
                 }
-                //if (UserHasSplit == true)
-                //{
-
-                //}
+                
             }
             if (UserHasSplit == true)
             {
@@ -465,32 +429,7 @@ namespace GruppInlämning_4___BlackJack
             }           
             RoundEnd();
         }
-        //PointsEarned();
         
-        //public int PointsEarned()
-        //{
-        //    //if (CalculateHandValueUser() == 21 && UserCards.Count == 2)
-        //    //{
-        //    //    totalScore += 2;
-        //    //}
-        //    else if (CalculateHandValueDealer() >= 22)
-        //    {
-
-        //    }
-        //    else if (CalculateHandValueUser() > CalculateHandValueDealer())
-        //    {
-
-        //    }
-        //    else if (CalculateHandValueUser() < CalculateHandValueDealer())
-        //    {
-        //        totalScore -=1;
-        //    }
-        //    //else if (CalculateHandValueUser() >= 22)
-        //    //{
-        //    //    totalScore -=1;
-        //    //}
-        //    return totalScore;
-        //}
 
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
@@ -538,11 +477,7 @@ namespace GruppInlämning_4___BlackJack
             CardList = new CardDeck().CardList;
         }
 
-        //Function som kan användas för att hitta Aces i UserCards eller DealerCards. Nu används Lambda expression istället.
-        //bool IsAceCard(Cards card)
-        //{
-        //    return card.ID.Contains("Ace");
-        //}
+        
         
     }
 }
