@@ -16,6 +16,7 @@ using System.IO;
 using System.Runtime.Intrinsics.X86;
 using System.Printing;
 using System.Media;
+using Path = System.IO.Path;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -30,7 +31,7 @@ namespace GruppInlämning_4___BlackJack
         List<Player> highscoreList = new List<Player>();
         List<UserBalance> userBalanceList = new List<UserBalance>();
         List<Accounts> accountList;
-        
+       
         
         
         public GameMenu()
@@ -39,6 +40,7 @@ namespace GruppInlämning_4___BlackJack
             LoadBalanceAccounts();
             LoadHighscoreList();
             manageAccountScreen.GameMenu = this;
+                        
         }
 
         public void SetAccountList(List<Accounts> accountList)
@@ -51,11 +53,13 @@ namespace GruppInlämning_4___BlackJack
             HighScoreScreen highScoreScreen= new HighScoreScreen();
             highScoreScreen.SetAllLists(highscoreList, userBalanceList);
             highScoreScreen.SetListBox();
-            highScoreScreen.Show();               
+            highScoreScreen.Show();      
+            
         }
 
         private void GoToBlackJackButton_Click(object sender, RoutedEventArgs e)
         {
+            
             bool userHasPlayedBefore = AddNewPlayer();
             //Startar ny version av kortleken.
             CardDeck newCardDeck = new CardDeck();
@@ -69,17 +73,19 @@ namespace GruppInlämning_4___BlackJack
                 blackJackScreen.StoreHighscoreList();
             }
 
-            //blackJackScreen.SetCardMechanic(newCardMechanics);
+            blackJackScreen.CurrentBalance();
             blackJackScreen.Show();
         }
 
         private void logOutButton_Click(object sender, RoutedEventArgs e)
         {
+            
             Hide();
         }
 
         private void ManageAccountButton_Click(object sender, RoutedEventArgs e)
         {
+            
             bool userHasBalanceAccount = AddUserToBalanceList();
             manageAccountScreen.SetAllLists(userBalanceList, currentUser, accountList);
             if (userHasBalanceAccount == false)
