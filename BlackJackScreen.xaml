@@ -41,5 +41,6 @@
         <Image x:Name="SixthCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="902,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Image x:Name="SeventhCardImageUserSplit" HorizontalAlignment="Left" Height="250" Margin="817,275,0,0" VerticalAlignment="Top" Width="175"/>
         <Label x:Name="CardTotalUserSplitLabel" Content="CardTotalUserSplit" HorizontalAlignment="Left" Margin="1242,188,0,0" VerticalAlignment="Top" FontSize="36" Visibility="Hidden"/>
+        <Label x:Name="balanceLabel" FontSize="26" Content="Label" HorizontalAlignment="Left" Margin="259,735,0,0" VerticalAlignment="Top" Width="130" Height="54"/>
     </Grid>
 </Window>
