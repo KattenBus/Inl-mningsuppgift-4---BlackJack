@@ -46,5 +46,6 @@
         <Button x:Name="Bet100" Content="100" HorizontalAlignment="Left" Margin="502,442,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="24" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="Bet100_Click"/>
         <Button x:Name="ResetBet" Content="Reset" HorizontalAlignment="Left" Margin="582,487,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="22" FontFamily="Showcard Gothic" Background="Black" Foreground="#FFFD840B" Click="ResetBet_Click"/>
         <Label x:Name="totalBetLabel" Content="Total bet:" Margin="53,296,0,0" VerticalAlignment="Top" Height="46" Width="226" FontSize="25" FontFamily="Showcard Gothic" HorizontalAlignment="Left"/>
+        <Label x:Name ="balanceLabel" Content="Label" HorizontalAlignment="Left" Margin="53,188,0,0" VerticalAlignment="Top" Height="58" Width="151"/>
     </Grid>
 </Window>

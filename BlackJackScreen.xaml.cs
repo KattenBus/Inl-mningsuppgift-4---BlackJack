@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 using System.IO;
 using System.ComponentModel;
 using System.Reflection;
+using System.Media;
+using System.IO;
+using Path = System.IO.Path;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -29,6 +32,9 @@ namespace GruppInlämning_4___BlackJack
         private GameMenu gameMenu;
         string currentUser;
         int totalBet;
+        private SoundPlayer player;
+        
+        
         
         public GameMenu GameMenu
         {
@@ -47,12 +53,15 @@ namespace GruppInlämning_4___BlackJack
             PerformPlayAgainButtonLogic();
             StoreBalanceAccount();
             StoreHighscoreList();
-            gameMenu.DisplayBalance();            
+            gameMenu.DisplayBalance();
         }
         public BlackJackScreen(CardMechanics cardMechanics)
         {
             InitializeComponent();
-            SetCardMechanic(cardMechanics);            
+            SetCardMechanic(cardMechanics);
+            string audioFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Audio");
+            string soundFilePath = Path.Combine(audioFolderPath, "flipcard.wav");
+            player = new SoundPlayer(soundFilePath);
         }
         public void SetAllLists(List<UserBalance> userBalanceList, string currentUser, List<Player> highscoreList)
         {
@@ -68,9 +77,10 @@ namespace GruppInlämning_4___BlackJack
         {
             Cards card = cardMechanics.DealCardUser();
             FirstCardImageUser.Source = new BitmapImage(new Uri(card.ImagePathFront, UriKind.Relative));
+            player.Play();
             Cards card2 = cardMechanics.DealCardUser();
             SecondCardImageUser.Source = new BitmapImage(new Uri(card2.ImagePathFront, UriKind.Relative));
-
+            
             if ((card.ID == "Hearts Ace" || card.ID == "Spades Ace" ||
                 card.ID == "Diamonds Ace" || card.ID == "Clover Ace") && cardMechanics.CalculateHandValueUser() > 21)
             {
@@ -255,6 +265,7 @@ namespace GruppInlämning_4___BlackJack
         }
         private void HitButton_Click(object sender, RoutedEventArgs e)
         {
+            player.Play();
             if (UserHasSplitAndStood == true)
             {
                 UserCanAddCardsToNewHand();
@@ -500,6 +511,7 @@ namespace GruppInlämning_4___BlackJack
         }
         private void UserCanAddCardsToNewHand()
         {
+            player.Play();
             if (ThirdCardImageUserSplit.Source == null)
             {
                 Cards card3 = cardMechanics.DealCardUserSplit();
@@ -863,6 +875,7 @@ namespace GruppInlämning_4___BlackJack
 
         private void SplitButton_Click(object sender, RoutedEventArgs e)
         {
+            player.Play();
             bool betIsMade = BetOnClickAction();
             if (betIsMade == false)
             {
@@ -1015,5 +1028,10 @@ namespace GruppInlämning_4___BlackJack
             totalBet += 500;
             totalBetLabel.Content = $"Total bet: {totalBet}";
         }
+
+        
+
+
+
     }
 }

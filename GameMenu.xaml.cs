@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
 using System.Printing;
+using System.Media;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -29,6 +30,8 @@ namespace GruppInlämning_4___BlackJack
         List<Player> highscoreList = new List<Player>();
         List<UserBalance> userBalanceList = new List<UserBalance>();
         List<Accounts> accountList;
+        
+        
         
         public GameMenu()
         {
@@ -125,9 +128,10 @@ namespace GruppInlämning_4___BlackJack
                     balanceLabel.Content = "Balance: " + user.GetBalance();
                     return;
                 }
+                                                                 
             }
         }
-
+     
         string folderPath = "csvFolder";
         string path = "csvFolder/balanceAccounts.csv";
         string absolutePath = "C:\\Users\\minht\\source\\repos\\Gruppuppgift4\\Gruppuppgift4";
