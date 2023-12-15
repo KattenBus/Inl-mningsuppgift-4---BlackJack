@@ -82,7 +82,6 @@ namespace GruppInlämning_4___BlackJack
                     failedRegistrationLabel.Content = "The passwords did not match";
                 }
             }
-
             newPasswordInput.Password = "";
             confirmNewPasswordInput.Password = "";
         }

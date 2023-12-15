@@ -23,11 +23,13 @@ namespace GruppInlämning_4___BlackJack
         List<Player> highscoreList;
         List<UserBalance> userBalanceList;
 
+        //Highscore är wins in a row.
+        //userBalanceList är med här för vi skulle ha med balance på något 
+        //användbartsätt i HighscoreScreen men det blev ej av.
 
         public HighScoreScreen()
         {
             InitializeComponent();
-            //PopulateHighScoreList();
         }
         
         public void SetAllLists(List<Player> highscoreList, List<UserBalance> userBalanceList)
@@ -44,13 +46,5 @@ namespace GruppInlämning_4___BlackJack
                 HighScoreListBox.Items.Add($"Name: {player.Name} | Score: {player.HighScore}");
             }
         }
-        //private void PopulateHighScoreList()
-        //{
-        //    PlayerList.Add(new Player(cardMechanics.totalScore, Name));
-        //    foreach (Player player in PlayerList)
-        //    {
-        //        HighScoreListBox.Items.Add($"{player.Name} - {player.HighScore}");
-        //    }
-        //}
     }
 }

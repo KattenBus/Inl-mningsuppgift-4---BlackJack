@@ -17,6 +17,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Printing;
 using System.Media;
 using Path = System.IO.Path;
+using System.ComponentModel;
 
 namespace GruppInlämning_4___BlackJack
 {
@@ -31,18 +32,32 @@ namespace GruppInlämning_4___BlackJack
         List<Player> highscoreList = new List<Player>();
         List<UserBalance> userBalanceList = new List<UserBalance>();
         List<Accounts> accountList;
-       
-        
-        
+        private LogInScreen logInScreen;
+
+        public LogInScreen LogInScreen
+        {
+            set
+            {
+                if (logInScreen != value)
+                {
+                    logInScreen = value;
+                }
+            }
+        }
         public GameMenu()
         {
             InitializeComponent();
             LoadBalanceAccounts();
             LoadHighscoreList();
-            manageAccountScreen.GameMenu = this;
-                        
+            manageAccountScreen.GameMenu = this;                       
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+            logInScreen.Show();
+        }
         public void SetAccountList(List<Accounts> accountList)
         {
             this.accountList = accountList;
@@ -78,9 +93,9 @@ namespace GruppInlämning_4___BlackJack
         }
 
         private void logOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            
+        {           
             Hide();
+            logInScreen.Show();
         }
 
         private void ManageAccountButton_Click(object sender, RoutedEventArgs e)

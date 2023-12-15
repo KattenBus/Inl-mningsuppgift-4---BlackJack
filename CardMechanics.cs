@@ -53,16 +53,14 @@ namespace GruppInlämning_4___BlackJack
             this.totalBet = totalBet;
         }
         public Cards DealCardUser()
-        {
-            
+        {            
             int chooseRandomCard = randomCard.Next(0, CardList.Count);
             Cards dealtCardUser = CardList[chooseRandomCard];
 
             CardList.RemoveAt(chooseRandomCard);
             UserCards.Add(dealtCardUser);
 
-            return dealtCardUser;
-            
+            return dealtCardUser;           
         }
         public Cards DealCardUserSplit()
         {
@@ -245,8 +243,7 @@ namespace GruppInlämning_4___BlackJack
                     MessageBox.Show("You got more than 21, Bust! YOU LOOSE YOU SECOND HAND!");
                 }
             }
-        }
-        
+        }       
         public bool Double()
         {
             DoubleInitiated = true;
@@ -261,10 +258,6 @@ namespace GruppInlämning_4___BlackJack
         //Kod som ska hoppa igång efter User är klar med sin runda.
         public void DealersTurn()
         {
-            //while (CalculateHandValueDealer() <= 16)
-            //{        
-            //        //DealCardDealer();
-            //}
             if (CalculateHandValueDealer() >= 22)
             {
                 if (CalculateHandValueUser() == 0)
@@ -428,8 +421,7 @@ namespace GruppInlämning_4___BlackJack
                 }
             }           
             RoundEnd();
-        }
-        
+        }      
 
         //Räknar ut vem av User eller Dealer som vann.
         public void RoundEnd()
@@ -475,9 +467,6 @@ namespace GruppInlämning_4___BlackJack
             DealerCards.Clear();
             UserHasSplit = false;
             CardList = new CardDeck().CardList;
-        }
-
-        
-        
+        }       
     }
 }

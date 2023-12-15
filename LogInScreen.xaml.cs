@@ -21,10 +21,12 @@ namespace GruppInlämning_4___BlackJack
     public partial class LogInScreen : Window
     {
         List<Accounts> accountList = new List<Accounts>();
+        GameMenu gameMenu = new GameMenu();
 
         public LogInScreen()
         {
             InitializeComponent();
+            gameMenu.LogInScreen = this;
             LoadAccounts();
         }
 
@@ -37,18 +39,18 @@ namespace GruppInlämning_4___BlackJack
             {
                 if (username == accounts.Username && password == accounts.Password) 
                 {
+                    usernameInput.Text = "";
                     passwordInput.Password = "";
-                    failLabel.Content = "";
-                    GameMenu gameMenu = new GameMenu();
+                    failLabel.Content = "";                   
                     gameMenu.welcomeLabel.Content = $"Welcome {username}!";
                     gameMenu.currentUser = username;
                     gameMenu.SetAccountList(accountList);
                     gameMenu.DisplayBalance();
+                    Hide();
                     gameMenu.Show();                 
                     return;
                 }
             }
-
             passwordInput.Password = "";
             failLabel.Content = "Your username or password was incorrect";
         }

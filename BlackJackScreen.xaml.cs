@@ -51,8 +51,7 @@ namespace GruppInlämning_4___BlackJack
             PerformPlayAgainButtonLogic();
             StoreBalanceAccount();
             StoreHighscoreList();
-            gameMenu.DisplayBalance();
-            
+            gameMenu.DisplayBalance();          
         }
         public BlackJackScreen(CardMechanics cardMechanics)
         {
@@ -252,8 +251,6 @@ namespace GruppInlämning_4___BlackJack
                 CardTotalUserLabel.Content = cardMechanics.CalculateHandValueUser();
                 totalWinsLabel.Content = "Total Wins: " + cardMechanics.totalScore;
             }
-            
-
         }
         private void HitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1017,8 +1014,6 @@ namespace GruppInlämning_4___BlackJack
             totalBetLabel.Content = $"Total bet: {totalBet}";
         }
 
-        
-
         public void CurrentBalance()
         {
             foreach (UserBalance user in userBalanceList)
@@ -1032,8 +1027,5 @@ namespace GruppInlämning_4___BlackJack
             }
                         
         }
-
-
-
     }
 }
